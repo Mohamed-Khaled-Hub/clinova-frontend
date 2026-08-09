@@ -8,7 +8,5 @@ export default function RootPage() {
 
     redirect({ href: '/dashboard', locale })
 
-    console.log('Testing commits')
-
     return null
 }
