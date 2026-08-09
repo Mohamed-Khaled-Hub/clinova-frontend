@@ -1,0 +1,17 @@
+@import '../../globals.css';
+
+@theme {
+    --color-fieldset-bg: var(--color-white);
+    --color-fieldset-border: var(--color-border-transparent-c);
+    --color-fieldset-text-title: var(--color-title-c);
+}
+
+fieldset.form-fieldset {
+    @apply flex flex-col gap-4 p-6 border rounded-lg shadow-sm;
+    @apply bg-fieldset-bg border-fieldset-border;
+}
+
+fieldset.form-fieldset legend.form-legend {
+    @apply text-sm font-bold capitalize tracking-wider text-left rtl:text-right px-1 select-none;
+    @apply text-fieldset-text-title;
+}

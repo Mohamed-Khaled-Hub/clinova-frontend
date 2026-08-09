@@ -1,0 +1,69 @@
+@import '../../globals.css';
+
+@theme {
+    /* Mirrored Input Variable Themes */
+    --color-select-bg: var(--color-white);
+    --color-select-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+
+    /* Hover State Variable */
+    --color-select-hover-border: color-mix(
+        in oklab,
+        var(--color-c2) 45%,
+        transparent
+    );
+
+    --color-select-focus-border: var(--color-c2);
+    --color-select-focus-ring: color-mix(
+        in oklab,
+        var(--color-c2) 10%,
+        transparent
+    );
+
+    /* Disabled Fields */
+    --color-select-disabled-bg: var(--color-neutral-50);
+    --color-select-disabled-text: var(--color-neutral-400);
+
+    /* Typography & Icons */
+    --color-select-text: var(--color-c1);
+    --color-select-label: var(--color-c1);
+    --color-select-icon: color-mix(in oklab, var(--color-c2) 50%, transparent);
+}
+
+div.select-container {
+    @apply flex flex-col gap-1.5 w-full;
+}
+
+label.select-label {
+    @apply block text-sm font-semibold tracking-tight select-none;
+    @apply text-select-label;
+}
+
+div.select-field-wrapper {
+    @apply relative w-full flex items-center;
+}
+
+select.select-box {
+    @apply w-full px-3 py-2 pr-10 rtl:pl-10 rtl:pr-3 rounded-lg border text-sm shadow-sm appearance-none transition-all duration-200 ease-in-out focus:outline-none focus:ring-4 disabled:cursor-not-allowed;
+    @apply bg-select-bg border-select-border text-select-text focus:border-select-focus-border focus:ring-select-focus-ring disabled:bg-select-disabled-bg disabled:text-select-disabled-text;
+}
+
+select.select-box:not(:disabled):hover {
+    @apply border-select-hover-border;
+}
+
+select.select-box:focus + .select-end-icon-container .select-icon {
+    @apply rotate-180;
+}
+
+.select-end-icon-container {
+    @apply absolute right-3 ltr:right-3 rtl:left-3 ltr:left-auto rtl:right-auto h-9 flex items-center justify-center pointer-events-none bg-transparent p-0;
+    @apply text-select-icon;
+}
+
+.select-icon {
+    @apply text-lg transition-transform duration-200 ease-in-out;
+}

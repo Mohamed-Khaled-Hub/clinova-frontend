@@ -1,0 +1,13 @@
+@import '../../../globals.css';
+
+.catalog-flex-center {
+    @apply flex justify-center items-center gap-2;
+}
+
+.catalog-actions-column {
+    @apply !w-0;
+}
+
+.catalog-input {
+    @apply !w-[10ch] !min-w-[10ch];
+}

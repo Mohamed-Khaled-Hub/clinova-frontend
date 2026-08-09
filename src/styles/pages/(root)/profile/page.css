@@ -1,0 +1,61 @@
+@import '../../../globals.css';
+
+@theme {
+    --color-view-card-bg: var(--color-white);
+    --color-section-divider: var(--color-neutral-100);
+    --color-profile-avatar-bg: var(--color-c3);
+    --color-profile-avatar-text: var(--color-white);
+}
+
+header.profile-header-card {
+    @apply flex flex-col items-center gap-5 p-2 rounded-xl text-center;
+    @apply bg-view-card-bg;
+}
+
+div.profile-main-identity {
+    @apply flex flex-col items-center gap-3.5;
+}
+
+div.profile-avatar-wrapper {
+    @apply h-52 w-52 rounded-full flex items-center justify-center text-5xl font-bold shadow-inner relative overflow-hidden select-none flex-shrink-0;
+    @apply bg-profile-avatar-bg text-profile-avatar-text;
+}
+
+.profile-avatar-img {
+    @apply w-full h-full object-cover;
+}
+
+div.profile-avatar-overlay {
+    @apply absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200;
+}
+
+div.profile-avatar-wrapper:hover div.profile-avatar-overlay {
+    @apply opacity-100;
+}
+
+.profile-avatar-overlay-icon {
+    @apply text-white text-3xl;
+}
+
+div.profile-identity-details {
+    @apply flex flex-col gap-1 items-center;
+}
+
+h1.profile-name {
+    @apply text-2xl font-bold tracking-tight;
+    @apply text-text-primary;
+}
+
+p.profile-username {
+    @apply text-sm font-medium;
+    @apply text-text-accent;
+}
+
+div.profile-role-badge-zone {
+    @apply mt-1;
+}
+
+div.profile-custom-actions-zone {
+    @apply pt-4 border-t flex justify-start w-full;
+    @apply border-section-divider;
+}

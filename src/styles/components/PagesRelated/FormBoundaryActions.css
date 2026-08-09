@@ -1,0 +1,27 @@
+@import '../../globals.css';
+
+@theme {
+    --color-section-divider: var(--color-neutral-100);
+}
+
+div.form-top-trigger-row {
+    @apply flex items-center justify-between gap-4 w-full min-h-[40px];
+}
+
+div.form-top-actions-cluster {
+    @apply flex items-center gap-2;
+}
+
+h2.form-section-heading {
+    @apply text-sm font-bold uppercase tracking-wider text-left rtl:text-right px-1 select-none;
+    @apply text-text-primary;
+}
+
+div.form-actions-row {
+    @apply pt-4 border-t flex justify-start w-full;
+    @apply border-section-divider;
+}
+
+div.form-actions-cluster {
+    @apply flex items-center gap-3 w-full sm:w-auto;
+}

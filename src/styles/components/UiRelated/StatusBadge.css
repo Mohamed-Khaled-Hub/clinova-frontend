@@ -1,0 +1,67 @@
+@import '../../globals.css';
+
+@theme {
+    /* Status Badges - Success */
+    --color-status-badge-success-bg: var(--color-emerald-50);
+    --color-status-badge-success-text: var(--color-emerald-700);
+    --color-status-badge-success-border: color-mix(
+        in oklab,
+        var(--color-emerald-200) 60%,
+        transparent
+    );
+
+    /* Status Badges - Info */
+    --color-status-badge-info-bg: var(--color-blue-50);
+    --color-status-badge-info-text: var(--color-blue-700);
+    --color-status-badge-info-border: color-mix(
+        in oklab,
+        var(--color-blue-200) 60%,
+        transparent
+    );
+
+    /* Status Badges - Warning */
+    --color-status-badge-warning-bg: var(--color-amber-50);
+    --color-status-badge-warning-text: var(--color-amber-700);
+    --color-status-badge-warning-border: color-mix(
+        in oklab,
+        var(--color-amber-200) 60%,
+        transparent
+    );
+
+    /* Status Badges - Error */
+    --color-status-badge-error-bg: var(--color-rose-50);
+    --color-status-badge-error-text: var(--color-rose-700);
+    --color-status-badge-error-border: color-mix(
+        in oklab,
+        var(--color-rose-200) 60%,
+        transparent
+    );
+}
+
+div.status-badge-container {
+    @apply flex items-center gap-3 mt-1;
+}
+
+.indicator-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold capitalize tracking-wider select-none;
+}
+
+/* Success Modifier */
+.indicator-badge.variant-success {
+    @apply bg-status-badge-success-bg text-status-badge-success-text border border-status-badge-success-border;
+}
+
+/* Info Modifier */
+.indicator-badge.variant-info {
+    @apply bg-status-badge-info-bg text-status-badge-info-text border border-status-badge-info-border;
+}
+
+/* Warning Modifier */
+.indicator-badge.variant-warning {
+    @apply bg-status-badge-warning-bg text-status-badge-warning-text border border-status-badge-warning-border;
+}
+
+/* Error Modifier */
+.indicator-badge.variant-error {
+    @apply bg-status-badge-error-bg text-status-badge-error-text border border-status-badge-error-border;
+}

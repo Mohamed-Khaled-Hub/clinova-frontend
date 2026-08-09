@@ -1,0 +1,24 @@
+@import '../../globals.css';
+
+@theme {
+    --color-loading-bg: var(--color-c2);
+    --color-loading-text: var(--color-white);
+}
+
+div.loading {
+    @apply fixed inset-0 z-(--loading-z-index) flex flex-col gap-1 h-screen w-screen items-center justify-center;
+    @apply bg-loading-bg/90 backdrop-blur-md text-loading-text;
+    @apply transition-all duration-300 ease-in-out;
+}
+
+.loading-lottie-wrapper {
+    @apply relative flex h-24 w-24 items-center justify-center overflow-hidden;
+}
+
+.loading-lottie {
+    @apply h-full w-full scale-175 transform transition-transform duration-300;
+}
+
+.loading-text {
+    @apply text-lg font-medium tracking-wide animate-pulse;
+}

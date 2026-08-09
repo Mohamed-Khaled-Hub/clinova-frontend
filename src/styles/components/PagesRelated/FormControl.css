@@ -1,0 +1,14 @@
+@import '../../globals.css';
+
+@theme {
+    --color-form-control-label: var(--color-key-c);
+}
+
+div.form-control {
+    @apply flex flex-col gap-1.5 text-left rtl:text-right w-full;
+}
+
+div.form-control label {
+    @apply text-xs font-semibold tracking-wide select-none;
+    @apply text-form-control-label;
+}

@@ -1,0 +1,40 @@
+@import '../../../globals.css';
+
+@theme {
+    --color-settings-field-value: var(--color-c1);
+    --color-settings-phone-pill-bg: var(--color-neutral-100);
+    --color-settings-phone-pill-border: color-mix(
+        in oklab,
+        var(--color-neutral-200) 60%,
+        transparent
+    );
+}
+
+div.settings-phones-viewing-row {
+    @apply flex flex-wrap rtl:flex-row-reverse gap-2;
+}
+
+span.settings-phone-pill {
+    @apply px-3 py-1 border rounded-full text-xs font-bold tracking-wide;
+    @apply bg-settings-phone-pill-bg border-settings-phone-pill-border text-settings-field-value;
+}
+
+div.settings-phones-editing-stack {
+    @apply flex flex-col rtl:items-end gap-2 w-full;
+}
+
+div.settings-phone-row-input {
+    @apply flex items-center rtl:flex-row-reverse gap-3 w-full;
+}
+
+div.settings-image-preview-container {
+    @apply w-24 h-24 rounded-lg overflow-hidden border border-neutral-200 bg-neutral-50 flex items-center justify-center;
+}
+
+img.settings-image-preview {
+    @apply w-full h-full object-cover;
+}
+
+div.settings-image-edit-container {
+    @apply flex flex-col gap-2;
+}

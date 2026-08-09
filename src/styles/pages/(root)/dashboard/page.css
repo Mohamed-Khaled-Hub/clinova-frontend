@@ -1,0 +1,23 @@
+@import '../../../globals.css';
+
+@theme {
+    --color-dashboard-text: var(--color-title-c);
+}
+
+section.dashboard-summary-section,
+section.dashboard-quick-actions-section {
+    @apply flex flex-col gap-3 w-full text-left rtl:text-right;
+}
+
+h2.dashboard-section-title {
+    @apply text-lg font-semibold tracking-tight;
+    @apply text-dashboard-text;
+}
+
+div.dashboard-summary-grid {
+    @apply grid gap-4 w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+}
+
+div.quick-actions-grid {
+    @apply grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 w-full;
+}

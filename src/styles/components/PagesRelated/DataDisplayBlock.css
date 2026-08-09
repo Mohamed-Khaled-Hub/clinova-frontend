@@ -1,0 +1,48 @@
+@import '../../globals.css';
+
+@theme {
+    --color-data-field-bg: color-mix(
+        in oklab,
+        var(--color-neutral-50) 50%,
+        transparent
+    );
+    --color-data-field-border: var(--color-neutral-100);
+    --color-data-locked-bg: color-mix(
+        in oklab,
+        var(--color-neutral-100) 40%,
+        transparent
+    );
+}
+
+.data-display-box {
+    @apply flex flex-col gap-1 p-4 border rounded-lg text-left rtl:text-right transition-colors;
+    @apply bg-data-field-bg border-data-field-border;
+}
+
+.data-input-wrapper {
+    @apply flex flex-col gap-1 p-1 text-left rtl:text-right;
+}
+
+.data-full-width {
+    @apply sm:col-span-2;
+}
+
+.data-display-locked {
+    @apply opacity-90 border-dashed;
+    @apply bg-data-locked-bg;
+}
+
+.data-block-label {
+    @apply text-xs font-semibold tracking-wide select-none;
+    @apply text-text-muted;
+}
+
+.data-block-value {
+    @apply text-sm font-semibold;
+    @apply text-text-primary;
+}
+
+.data-block-fallback {
+    @apply font-medium select-none;
+    @apply text-text-fallback;
+}

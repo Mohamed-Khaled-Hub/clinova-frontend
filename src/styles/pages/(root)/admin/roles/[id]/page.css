@@ -1,0 +1,22 @@
+@import '../../../../../globals.css';
+
+div.roles-badge-container {
+    @apply flex gap-2 items-center;
+}
+
+div.roles-header-divider {
+    @apply col-span-full border-b border-slate-100 pb-2 mt-4;
+}
+
+h3.roles-header-title {
+    @apply text-sm font-bold uppercase tracking-wider text-left rtl:text-right px-1 select-none;
+    @apply text-text-primary;
+}
+
+div.roles-toggle-wrapper {
+    @apply flex gap-6 items-center h-10 px-1;
+}
+
+label.roles-toggle-label {
+    @apply flex items-center gap-2 cursor-pointer select-none text-sm font-medium;
+}

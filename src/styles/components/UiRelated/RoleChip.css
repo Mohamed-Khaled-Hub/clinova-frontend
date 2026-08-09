@@ -1,0 +1,98 @@
+@import '../../globals.css';
+
+@theme {
+    /* Super Admin Theme Variables */
+    --color-role-super-admin-bg: color-mix(
+        in oklab,
+        var(--color-super-admin) 30%,
+        transparent
+    );
+    --color-role-super-admin-text: var(--color-super-admin-darker);
+
+    /* Admin Theme Variables */
+    --color-role-admin-bg: color-mix(
+        in oklab,
+        var(--color-admin) 30%,
+        transparent
+    );
+    --color-role-admin-text: var(--color-admin-darker);
+
+    /* Doctor Theme Variables */
+    --color-role-doctor-bg: color-mix(
+        in oklab,
+        var(--color-doctor) 30%,
+        transparent
+    );
+    --color-role-doctor-text: var(--color-doctor-darker);
+
+    /* Receptionist Theme Variables */
+    --color-role-receptionist-bg: color-mix(
+        in oklab,
+        var(--color-receptionist) 30%,
+        transparent
+    );
+    --color-role-receptionist-text: var(--color-receptionist-darker);
+
+    /* Default/Fallback Theme Variables */
+    --color-role-default-bg: color-mix(
+        in oklab,
+        var(--color-neutral-500) 30%,
+        transparent
+    );
+    --color-role-default-text: var(--color-neutral-400);
+}
+
+/* Base Structural Layout Elements */
+div.role-chip {
+    @apply inline-flex items-center justify-center gap-1.5 w-fit rounded-lg px-3 py-1 text-xs font-bold tracking-wider;
+}
+
+div.role-chip span.dot {
+    @apply h-1.5 w-1.5 rounded-full opacity-80 bg-current;
+}
+
+span.role-text-only {
+    @apply font-semibold text-sm;
+}
+
+/* Role Modifier Assignments - Chip Variants */
+div.role-chip.role-super-admin {
+    @apply bg-role-super-admin-bg text-role-super-admin-text;
+}
+
+div.role-chip.role-admin {
+    @apply bg-role-admin-bg text-role-admin-text;
+}
+
+div.role-chip.role-doctor {
+    @apply bg-role-doctor-bg text-role-doctor-text;
+}
+
+div.role-chip.role-receptionist {
+    @apply bg-role-receptionist-bg text-role-receptionist-text;
+}
+
+div.role-chip.role-default {
+    @apply bg-role-default-bg text-role-default-text;
+}
+
+/* Role Modifier Assignments - Text Only Variants */
+span.role-text-only.role-super-admin {
+    @apply text-role-super-admin-text;
+}
+
+span.role-text-only.role-admin {
+    @apply text-role-admin-text;
+}
+
+span.role-text-only.role-doctor {
+    @apply text-role-doctor-text;
+}
+
+span.role-text-only.role-receptionist {
+    @apply text-role-receptionist-text;
+}
+
+span.role-text-only.role-default {
+    @apply text-role-default-text;
+}

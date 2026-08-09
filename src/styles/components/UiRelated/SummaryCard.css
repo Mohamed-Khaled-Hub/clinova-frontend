@@ -1,0 +1,33 @@
+@import '../../globals.css';
+
+@theme {
+    --color-summary-card-text-main: var(--color-text-primary);
+    --color-summary-card-text-muted: var(--color-text-muted);
+    --color-summary-card-border: var(--color-border-transparent-c);
+    --color-summary-card-bg: var(--color-white);
+    --color-summary-card-icon: var(--color-c1);
+}
+
+div.summary-card-container {
+    @apply flex items-center p-6 border rounded-xl shadow-xs;
+    @apply bg-summary-card-bg border-summary-card-border;
+}
+
+div.summary-card-icon-wrapper {
+    @apply flex items-center justify-center w-12 h-12 text-2xl rounded-lg me-4 flex-shrink-0;
+    @apply bg-summary-card-icon/10 text-summary-card-icon;
+}
+
+div.summary-card-info {
+    @apply flex flex-col;
+}
+
+span.summary-card-label {
+    @apply text-sm mb-1 font-medium;
+    @apply text-summary-card-text-muted;
+}
+
+h3.summary-card-value {
+    @apply text-2xl font-bold m-0 tracking-tight;
+    @apply text-summary-card-text-main;
+}

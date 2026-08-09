@@ -1,0 +1,123 @@
+@import '../../globals.css';
+
+@theme {
+    --color-note-group-bg: var(--color-white);
+    --color-note-text-main: var(--color-text-primary);
+    --color-note-text-muted: var(--color-text-muted);
+    --color-note-text-hover: var(--color-c4);
+}
+
+div.visit-notes-view-list {
+    @apply w-full;
+}
+
+div.visit-notes-view-list-inner {
+    @apply flex flex-col gap-4 w-full;
+}
+
+div.visit-notes-view-list.multi-visit-scroll-container {
+    @apply flex flex-row gap-6 w-full overflow-x-auto overflow-y-hidden pt-4 scrollbar-thin rotate-180;
+}
+
+div.multi-visit-column {
+    @apply flex flex-col gap-3 pt-4 min-w-[320px] max-w-[450px] sm:min-w-[400px] grow shrink-0 rotate-180;
+}
+
+a.multi-visit-column-header-link {
+    @apply flex-col gap-0.5 w-fit block outline-none select-none;
+}
+
+a.multi-visit-column-header-link:focus-visible h2,
+a.multi-visit-column-header-link:focus-visible span {
+    @apply text-note-text-hover underline;
+}
+
+h2.multi-visit-column-title {
+    @apply font-extrabold text-lg transition-colors duration-200;
+    @apply text-note-text-main group-hover:text-note-text-hover;
+}
+
+span.multi-visit-column-subtitle {
+    @apply text-sm font-bold transition-colors duration-200;
+    @apply text-note-text-muted group-hover:text-note-text-hover/50;
+}
+
+section.visit-note-category-group {
+    @apply flex flex-col gap-3 w-full rounded-xl p-5 shadow-sm;
+    @apply bg-note-group-bg;
+}
+
+div.visit-note-category-header {
+    @apply flex items-center justify-between w-full cursor-pointer;
+}
+
+div.visit-note-category-header * {
+    @apply duration-200;
+}
+
+div.visit-note-category-header:hover * {
+    @apply text-note-text-hover;
+}
+
+h3.visit-note-category-title {
+    @apply text-base font-extrabold tracking-wide uppercase select-none;
+    @apply text-note-text-main;
+}
+
+button.visit-note-category-toggle-btn {
+    @apply p-1 rounded-lg transition-all outline-none;
+    @apply text-note-text-muted;
+}
+
+.visit-note-toggle-icon {
+    @apply transition-transform;
+}
+
+button.visit-note-category-toggle-btn.is-active .visit-note-toggle-icon {
+    @apply -rotate-180;
+}
+
+div.visit-note-category-items {
+    @apply flex flex-col w-full;
+}
+
+div.visit-note-row-item {
+    @apply flex gap-3 py-3 first:pt-1 last:pb-1 items-start;
+}
+
+div.visit-note-row-indicator {
+    @apply w-1 rounded-full shrink-0 self-stretch my-0.5;
+    @apply bg-note-text-muted;
+}
+
+span.visit-note-row-number {
+    @apply text-sm select-none tabular-nums min-w-[18px] text-start;
+    @apply text-note-text-muted;
+}
+
+div.visit-note-row-body {
+    @apply flex flex-col gap-1 grow;
+}
+
+p.visit-note-row-text {
+    @apply text-sm leading-relaxed whitespace-pre-wrap;
+    @apply text-note-text-main;
+}
+
+span.visit-note-row-date-wrapper {
+    @apply text-[11px] leading-tight tracking-wide mt-0.5;
+}
+
+span.visit-note-row-date-label {
+    @apply opacity-75;
+    @apply text-note-text-muted;
+}
+
+span.visit-note-row-date-value {
+    @apply text-note-text-muted;
+}
+
+p.visit-notes-empty-msg {
+    @apply text-sm italic w-full p-4 text-center;
+    @apply text-note-text-muted;
+}

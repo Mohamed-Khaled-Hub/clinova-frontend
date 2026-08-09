@@ -1,0 +1,15 @@
+@import '../../globals.css';
+
+@theme {
+    --color-view-card-bg: var(--color-white);
+    --color-section-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+}
+
+div.content-section-card {
+    @apply flex flex-col gap-4 p-6 border rounded-lg shadow-sm w-full min-w-0;
+    @apply bg-view-card-bg border-section-border;
+}

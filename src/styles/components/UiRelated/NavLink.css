@@ -1,0 +1,29 @@
+@import '../../globals.css';
+
+@theme {
+    /* Interactive States & Normal Typography */
+    --color-nav-item-text: var(--color-c1);
+    --color-nav-item-hover-bg: color-mix(
+        in oklab,
+        var(--color-c2) 15%,
+        transparent
+    );
+
+    /* Active Component States */
+    --color-nav-item-active-bg: var(--color-c2);
+    --color-nav-item-active-text: var(--color-white);
+}
+
+a.nav-item-link {
+    @apply flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-150 ease-in-out;
+    @apply text-nav-item-text hover:bg-nav-item-hover-bg;
+}
+
+a.nav-item-link.active {
+    @apply font-semibold;
+    @apply bg-nav-item-active-bg text-nav-item-active-text;
+}
+
+.nav-item-icon {
+    @apply text-base;
+}

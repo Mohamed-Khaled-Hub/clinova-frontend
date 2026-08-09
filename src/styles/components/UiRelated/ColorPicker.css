@@ -1,0 +1,105 @@
+@import '../../globals.css';
+
+@theme {
+    /* Theme overrides specifically for the Color Picker if needed */
+    --color-picker-bg: var(--color-white);
+    --color-picker-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+
+    /* Hover State */
+    --color-picker-hover-border: color-mix(
+        in oklab,
+        var(--color-c2) 45%,
+        transparent
+    );
+
+    --color-picker-focus-border: var(--color-c2);
+    --color-picker-focus-ring: color-mix(
+        in oklab,
+        var(--color-c2) 10%,
+        transparent
+    );
+
+    /* Disabled Fields */
+    --color-picker-disabled-bg: var(--color-neutral-50);
+    --color-picker-disabled-text: var(--color-neutral-400);
+
+    /* Error States */
+    --color-picker-error-bg: color-mix(
+        in oklab,
+        var(--color-red-50) 10%,
+        transparent
+    );
+    --color-picker-error-border: var(--color-red-200);
+    --color-picker-error-hover-border: var(--color-red-300);
+    --color-picker-error-text: var(--color-red-600);
+    --color-picker-error-focus: var(--color-red-500);
+    --color-picker-error-ring: var(--color-red-100);
+
+    /* Typography, Icons & Labels */
+    --color-picker-text: var(--color-c1);
+    --color-picker-label: var(--color-c1);
+    --color-picker-icon: color-mix(in oklab, var(--color-c2) 50%, transparent);
+    --color-picker-icon-hover: var(--color-c1);
+}
+
+div.color-picker-container {
+    @apply flex flex-col gap-1.5 w-full;
+}
+
+label.color-picker-label {
+    @apply block text-sm font-semibold tracking-tight select-none;
+    @apply text-picker-label;
+}
+
+label.color-picker-label-error {
+    @apply text-picker-error-text;
+}
+
+div.color-picker-field-wrapper {
+    @apply relative w-full flex items-center max-w-fit;
+}
+
+div.color-picker-box {
+    @apply flex items-center gap-3 !w-auto pr-10 rtl:pl-10 rtl:pr-3 min-w-[140px] px-3 py-2 rounded-lg border text-sm shadow-sm transition-all duration-200 ease-in-out focus-within:outline-none focus-within:ring-4 disabled:cursor-not-allowed;
+    @apply bg-picker-bg border-picker-border text-picker-text focus-within:border-picker-focus-border focus-within:ring-picker-focus-ring disabled:bg-picker-disabled-bg disabled:text-picker-disabled-text;
+}
+
+input.color-picker-input {
+    @apply w-6 h-6 rounded cursor-pointer border-0 bg-transparent shrink-0;
+}
+
+span.color-picker-value-text {
+    @apply text-xs font-medium text-neutral-500 select-none;
+}
+
+div.color-picker-box:not(.color-picker-disabled):not(
+        .color-picker-error
+    ):hover {
+    @apply border-picker-hover-border;
+}
+
+div.color-picker-error {
+    @apply focus-within:ring-4;
+    @apply bg-picker-error-bg border-picker-error-border focus-within:border-picker-error-focus focus-within:ring-picker-error-ring;
+}
+
+div.color-picker-error:not(.color-picker-disabled):hover {
+    @apply border-picker-error-hover-border;
+}
+
+.color-picker-disabled {
+    @apply opacity-60 pointer-events-none bg-picker-disabled-bg text-picker-disabled-text;
+}
+
+.color-picker-end-icon-container {
+    @apply absolute right-3 rtl:left-3 rtl:right-auto h-9 flex items-center justify-center transition-colors duration-150 cursor-pointer border-0 bg-transparent p-0;
+    @apply text-picker-icon hover:text-picker-icon-hover;
+}
+
+.color-picker-icon {
+    @apply text-lg;
+}

@@ -1,0 +1,103 @@
+@import '../../globals.css';
+
+@theme {
+    /* Normal Light Variant Styles */
+    --color-btn-normal-light-bg: var(--color-white);
+    --color-btn-normal-light-text: var(--color-c2);
+    --color-btn-normal-light-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+    --color-btn-normal-light-hover-bg: color-mix(
+        in oklab,
+        var(--color-c2) 5%,
+        transparent
+    );
+    --color-btn-normal-light-hover-border: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
+
+    /* Normal Dark Variant Styles */
+    --color-btn-normal-dark-bg: var(--color-c2);
+    --color-btn-normal-dark-text: var(--color-white);
+    --color-btn-normal-dark-border: transparent;
+    --color-btn-normal-dark-hover-bg: var(--color-c1);
+
+    /* Destructive Light Variant Styles */
+    --color-btn-destructive-light-bg: var(--color-white);
+    --color-btn-destructive-light-text: var(--color-c2);
+    --color-btn-destructive-light-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+    --color-btn-destructive-light-hover-bg: var(--color-red-50);
+    --color-btn-destructive-light-hover-text: var(--color-red-600);
+    --color-btn-destructive-light-hover-border: var(--color-red-200);
+
+    /* Destructive Dark Variant Styles */
+    --color-btn-destructive-dark-bg: var(--color-c2);
+    --color-btn-destructive-dark-text: var(--color-white);
+    --color-btn-destructive-dark-border: transparent;
+    --color-btn-destructive-dark-hover-bg: var(--color-red-600);
+    --color-btn-destructive-dark-hover-text: var(--color-white);
+
+    /* Disabled Variant Styles */
+    --color-btn-disabled-bg: color-mix(
+        in oklab,
+        var(--color-neutral-200) 60%,
+        transparent
+    );
+    --color-btn-disabled-text: var(--color-neutral-400);
+    --color-btn-disabled-border: color-mix(
+        in oklab,
+        var(--color-neutral-300) 40%,
+        transparent
+    );
+}
+
+.custom-action-btn {
+    @apply flex items-center gap-2 px-3 py-1.5 border rounded-lg no-underline text-sm font-semibold transition-all duration-200 ease-in-out cursor-pointer;
+}
+
+.icon-only-btn {
+    @apply p-2 justify-center aspect-square;
+}
+
+.icon-only-btn .btn-action-icon {
+    @apply text-lg;
+}
+
+.btn-full-width {
+    @apply w-full justify-center;
+}
+
+.btn-action-icon {
+    @apply text-base transition-transform duration-150;
+}
+
+.btn-normal-light {
+    @apply bg-btn-normal-light-bg text-btn-normal-light-text border-btn-normal-light-border hover:bg-btn-normal-light-hover-bg hover:border-btn-normal-light-hover-border;
+}
+
+.btn-normal-dark {
+    @apply bg-btn-normal-dark-bg text-btn-normal-dark-text border-btn-normal-dark-border hover:bg-btn-normal-dark-hover-bg;
+}
+
+.btn-destructive-light {
+    @apply bg-btn-destructive-light-bg text-btn-destructive-light-text border-btn-destructive-light-border hover:bg-btn-destructive-light-hover-bg hover:text-btn-destructive-light-hover-text hover:border-btn-destructive-light-hover-border;
+}
+
+.btn-destructive-dark {
+    @apply bg-btn-destructive-dark-bg text-btn-destructive-dark-text border-btn-destructive-dark-border hover:bg-btn-destructive-dark-hover-bg hover:text-btn-destructive-dark-hover-text;
+}
+
+.custom-action-btn:disabled,
+.custom-action-btn[aria-disabled='true'],
+.custom-action-btn.btn-disabled {
+    @apply opacity-75 pointer-events-none cursor-not-allowed select-none;
+    @apply bg-btn-disabled-bg text-btn-disabled-text border-btn-disabled-border;
+}

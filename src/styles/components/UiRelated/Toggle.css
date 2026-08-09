@@ -1,0 +1,53 @@
+@import '../../globals.css';
+
+@theme {
+    /* Track Active States */
+    --color-toggle-track-active-bg: var(--color-emerald-400);
+    --color-toggle-track-active-border: var(--color-emerald-700);
+    --color-toggle-track-active-shadow: color-mix(
+        in oklab,
+        var(--color-emerald-600) 25%,
+        transparent
+    );
+
+    /* Track Inactive States */
+    --color-toggle-track-inactive-bg: var(--color-neutral-400);
+    --color-toggle-track-inactive-border: var(--color-neutral-700);
+    --color-toggle-track-inactive-shadow: color-mix(
+        in oklab,
+        var(--color-neutral-600) 25%,
+        transparent
+    );
+
+    /* Moving Thumb Variables */
+    --color-toggle-thumb-bg: var(--color-white);
+}
+
+div.toggle-wrapper {
+    @apply flex items-center gap-3;
+}
+
+button.toggle-track {
+    @apply relative inline-flex h-6 w-11 shrink-0 items-center cursor-pointer rounded-full inset-shadow-sm border-2 duration-200 ease-in-out outline-none disabled:cursor-not-allowed disabled:opacity-40;
+}
+
+button.toggle-track-active {
+    @apply bg-toggle-track-active-bg border-toggle-track-active-border inset-shadow-toggle-track-active-shadow;
+}
+
+button.toggle-track-inactive {
+    @apply bg-toggle-track-inactive-bg border-toggle-track-inactive-border inset-shadow-toggle-track-inactive-shadow;
+}
+
+span.toggle-thumb {
+    @apply pointer-events-none inline-block h-4 w-4 transform rounded-full shadow transition duration-200 ease-in-out;
+    @apply bg-toggle-thumb-bg;
+}
+
+span.toggle-thumb-active {
+    @apply translate-x-5.25 rtl:-translate-x-5.25;
+}
+
+span.toggle-thumb-inactive {
+    @apply translate-x-0.75 rtl:-translate-x-0.75;
+}

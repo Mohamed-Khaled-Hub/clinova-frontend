@@ -1,0 +1,51 @@
+@import '../../globals.css';
+
+@theme {
+    --color-visit-note-border: var(--color-border-transparent-c);
+    --color-suggestion-bg: var(--color-white);
+    --color-suggestion-border: var(--color-border-transparent-c);
+    --color-suggestion-divider: var(--color-border-transparent-c);
+    --color-suggestion-text: var(--color-neutral-800);
+    --color-suggestion-hover-bg: var(--color-neutral-100);
+    --color-suggestion-loader: var(--color-neutral-500);
+}
+
+.visit-note-card {
+    @apply flex flex-col gap-3 p-4 border rounded-xl w-full;
+    @apply border-visit-note-border;
+}
+
+.visit-note-controls {
+    @apply flex items-center justify-between gap-4 w-full;
+}
+
+.visit-note-controls-left {
+    @apply flex items-center gap-3 flex-1 max-w-lg;
+}
+
+.visit-note-select-wrapper {
+    @apply w-full max-w-xs;
+}
+
+.visit-note-textarea-wrapper {
+    @apply relative w-full flex flex-col;
+}
+
+.visit-note-suggestions-loader {
+    @apply absolute top-3 right-3 z-10 pointer-events-none;
+    @apply text-suggestion-loader;
+}
+
+.visit-note-suggestions-dropdown {
+    @apply absolute left-0 right-0 top-[102%] z-50;
+    @apply flex flex-col max-h-48 overflow-y-auto;
+    @apply border rounded-lg shadow-lg;
+    @apply bg-suggestion-bg border-suggestion-border divide-y divide-suggestion-divider;
+}
+
+.visit-note-suggestion-item {
+    @apply w-full text-left rtl:text-right px-4 py-2 text-sm transition-colors duration-150;
+    @apply focus:outline-none;
+    @apply text-suggestion-text;
+    @apply hover:bg-suggestion-hover-bg focus:bg-suggestion-hover-bg;
+}

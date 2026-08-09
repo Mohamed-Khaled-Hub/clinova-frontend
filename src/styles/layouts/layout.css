@@ -1,0 +1,14 @@
+@import '../globals.css';
+
+@theme {
+    --color-root-bg: var(--color-white);
+}
+
+html {
+    @apply h-full antialiased;
+}
+
+body {
+    @apply flex flex-col min-h-screen *:text-left *:rtl:text-right;
+    @apply bg-root-bg;
+}

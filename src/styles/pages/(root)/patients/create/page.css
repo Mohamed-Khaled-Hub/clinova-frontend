@@ -1,0 +1,5 @@
+@import '../../../../globals.css';
+
+form.patient-form-element {
+    @apply flex flex-col gap-5;
+}

@@ -1,0 +1,5 @@
+@import '../../globals.css';
+
+main.main {
+    @apply flex-1;
+}

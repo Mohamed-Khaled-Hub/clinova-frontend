@@ -1,0 +1,11 @@
+@import '../../../globals.css';
+
+@theme {
+    --color-patients-bg: var(--color-white);
+    --color-patients-border: var(--color-border-transparent-c);
+}
+
+div.search-bar {
+    @apply w-full flex items-center gap-2 p-3 rounded-xl shadow-sm border;
+    @apply bg-patients-bg border-patients-border;
+}

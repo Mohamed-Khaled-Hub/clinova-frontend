@@ -1,0 +1,97 @@
+@import '../../globals.css';
+
+@theme {
+    /* Standard Input Themes */
+    --color-input-bg: var(--color-white);
+    --color-input-border: color-mix(in oklab, var(--color-c2) 25%, transparent);
+
+    /* Hover State */
+    --color-input-hover-border: color-mix(
+        in oklab,
+        var(--color-c2) 45%,
+        transparent
+    );
+
+    --color-input-focus-border: var(--color-c2);
+    --color-input-focus-ring: color-mix(
+        in oklab,
+        var(--color-c2) 10%,
+        transparent
+    );
+
+    /* Disabled Fields */
+    --color-input-disabled-bg: var(--color-neutral-50);
+    --color-input-disabled-text: var(--color-neutral-400);
+
+    /* Form Validation Error States */
+    --color-input-error-bg: color-mix(
+        in oklab,
+        var(--color-red-50) 10%,
+        transparent
+    );
+    --color-input-error-border: var(--color-red-200);
+
+    /* Hover state for error fields */
+    --color-input-error-hover-border: var(--color-red-300);
+
+    --color-input-error-text: var(--color-red-600);
+    --color-input-error-focus: var(--color-red-500);
+    --color-input-error-ring: var(--color-red-100);
+
+    /* Typography, Icons & Placeholders */
+    --color-input-text: var(--color-c1);
+    --color-input-label: var(--color-c1);
+    --color-input-placeholder: var(--color-placeholder-c);
+    --color-input-icon: color-mix(in oklab, var(--color-c2) 50%, transparent);
+    --color-input-icon-hover: var(--color-c1);
+}
+
+div.input-container {
+    @apply flex flex-col gap-1.5 w-full;
+}
+
+label.input-label {
+    @apply block text-sm font-semibold tracking-tight select-none;
+    @apply text-input-label;
+}
+
+label.input-label-error {
+    @apply text-input-error-text;
+}
+
+div.input-field-wrapper {
+    @apply relative w-full flex items-center;
+}
+
+input.input-box {
+    @apply w-full px-3 py-2 rounded-lg border text-sm shadow-sm transition-all duration-200 ease-in-out focus:outline-none focus:ring-4 disabled:cursor-not-allowed;
+    @apply bg-input-bg border-input-border text-input-text placeholder:text-input-placeholder focus:border-input-focus-border focus:ring-input-focus-ring disabled:bg-input-disabled-bg disabled:text-input-disabled-text;
+}
+
+/* Standard Hover State */
+input.input-box:not(:disabled):not(.input-error):hover {
+    @apply border-input-hover-border;
+}
+
+input.input-box-with-icon {
+    @apply pr-10 rtl:pl-10 rtl:pr-3;
+}
+
+input.input-error {
+    @apply focus:ring-4;
+    @apply bg-input-error-bg border-input-error-border focus:border-input-error-focus focus:ring-input-error-ring;
+}
+
+/* Error Hover State */
+input.input-error:not(:disabled):hover {
+    @apply border-input-error-hover-border;
+}
+
+.input-end-icon-container {
+    @apply absolute right-3 rtl:left-3 rtl:right-auto h-9 flex items-center justify-center transition-colors duration-150 cursor-pointer border-0 bg-transparent p-0;
+    @apply text-input-icon hover:text-input-icon-hover;
+}
+
+.input-icon {
+    @apply text-lg;
+}

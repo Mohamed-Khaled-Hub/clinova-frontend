@@ -1,0 +1,33 @@
+@import '../../globals.css';
+
+@theme {
+    --color-tab-border-active: var(--color-c4);
+    --color-tab-border-idle: var(--color-border-transparent-c);
+    --color-tab-text-active: var(--color-c4);
+    --color-tab-text-idle: var(--color-text-muted);
+    --color-tab-text-hover: var(--color-title-c);
+}
+
+div.tabs-nav-container {
+    @apply flex gap-2 border-b-2 mb-6 pb-0.5;
+    @apply border-tab-border-idle;
+}
+
+div.tabs-nav-container button.tab-nav-btn {
+    @apply inline-flex items-center gap-2 px-5 py-3 text-sm font-medium transition-all duration-200;
+    @apply bg-transparent border-b-3 border-transparent cursor-pointer -mb-1 select-none;
+    @apply text-tab-text-idle;
+}
+
+div.tabs-nav-container button.tab-nav-btn:hover {
+    @apply text-tab-text-hover;
+}
+
+div.tabs-nav-container button.tab-nav-btn svg.tab-icon {
+    @apply text-base;
+}
+
+div.tabs-nav-container button.tab-nav-btn.active-tab {
+    @apply font-bold;
+    @apply text-tab-text-active border-tab-border-active;
+}

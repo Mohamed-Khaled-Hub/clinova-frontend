@@ -1,0 +1,10 @@
+@import '../../globals.css';
+
+@theme {
+    --color-logo-text: var(--color-c2);
+}
+
+p.logo {
+    @apply !font-bold text-2xl inline-block;
+    @apply !text-logo-text;
+}

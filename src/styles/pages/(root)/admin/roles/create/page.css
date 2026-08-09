@@ -1,0 +1,36 @@
+@import '../../../../../globals.css';
+
+@theme {
+    --color-permission-table-text: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
+    --color-permission-row-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+}
+
+form.role-form-element {
+    @apply flex flex-col gap-5;
+}
+
+div.role-permissions-configuration-stack {
+    @apply flex flex-col gap-3 w-full;
+}
+
+.permissions-table-header {
+    @apply grid grid-cols-[1fr_80px_80px_50px] gap-4 items-center px-2 font-medium text-sm;
+    @apply text-permission-table-text;
+}
+
+.permission-row-item {
+    @apply grid grid-cols-[1fr_80px_80px_50px] gap-4 items-center p-2 rounded-lg border transition-all duration-200;
+    @apply border-permission-row-border;
+}
+
+.role-add-permission-btn-wrapper {
+    @apply w-fit mt-2;
+}

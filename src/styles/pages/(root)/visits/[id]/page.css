@@ -1,0 +1,14 @@
+@import '../../../../globals.css';
+
+@theme {
+    --color-section-divider: var(--color-neutral-100);
+}
+
+div.visit-notes-action-container {
+    @apply flex justify-start mt-4;
+}
+
+div.visit-custom-actions-zone-top {
+    @apply pb-4 border-b flex flex-col md:flex-row items-center gap-4 w-full;
+    @apply border-section-divider;
+}

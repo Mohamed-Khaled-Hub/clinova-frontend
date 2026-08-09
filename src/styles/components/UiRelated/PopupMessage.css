@@ -1,0 +1,90 @@
+@import '../../globals.css';
+
+@theme {
+    /* Success Status Theme */
+    --color-popup-success-bg: var(--color-emerald-100);
+    --color-popup-success-text: var(--color-emerald-700);
+    --color-popup-success-border: var(--color-emerald-200);
+
+    /* Error Status Theme */
+    --color-popup-error-bg: var(--color-rose-100);
+    --color-popup-error-text: var(--color-rose-700);
+    --color-popup-error-border: var(--color-rose-200);
+
+    /* Info Status Theme */
+    --color-popup-info-bg: var(--color-blue-100);
+    --color-popup-info-text: var(--color-blue-700);
+    --color-popup-info-border: var(--color-blue-200);
+
+    /* Warning Status Theme */
+    --color-popup-warning-bg: var(--color-amber-100);
+    --color-popup-warning-text: var(--color-amber-700);
+    --color-popup-warning-border: var(--color-amber-200);
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popupFadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+div.popup-message {
+    @apply fixed top-5 right-5 z-(--popup-z-index) flex items-center gap-3 w-full max-w-sm p-4 rounded-lg border shadow-md cursor-pointer rtl:right-auto rtl:left-5;
+    animation: popupFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+div.popup-state-exit {
+    animation: popupFadeOut 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+div.popup-modifier-success {
+    @apply bg-popup-success-bg text-popup-success-text border-popup-success-border;
+}
+
+div.popup-modifier-error {
+    @apply bg-popup-error-bg text-popup-error-text border-popup-error-border;
+}
+
+div.popup-modifier-info {
+    @apply bg-popup-info-bg text-popup-info-text border-popup-info-border;
+}
+
+div.popup-modifier-warning {
+    @apply bg-popup-warning-bg text-popup-warning-text border-popup-warning-border;
+}
+
+div.popup-icon-wrapper {
+    @apply flex-shrink-0;
+}
+
+.popup-status-icon {
+    @apply h-5 w-5;
+}
+
+div.popup-content-zone {
+    @apply flex-1 flex flex-col gap-0.5 pr-2 rtl:pr-0 rtl:pl-2;
+}
+
+p.popup-text-item {
+    @apply text-sm font-semibold leading-none;
+}
+
+button.popup-close-button {
+    @apply flex-shrink-0 inline-flex items-center justify-center p-1 rounded-md opacity-60 transition-opacity hover:opacity-100 focus:outline-none cursor-pointer;
+}
+
+.popup-close-icon {
+    @apply h-4 w-4;
+}

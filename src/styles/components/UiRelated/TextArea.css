@@ -1,0 +1,94 @@
+@import '../../globals.css';
+
+@theme {
+    --color-textarea-bg: var(--color-white);
+    --color-textarea-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+
+    --color-textarea-hover-border: color-mix(
+        in oklab,
+        var(--color-c2) 45%,
+        transparent
+    );
+
+    --color-textarea-focus-border: var(--color-c2);
+    --color-textarea-focus-ring: color-mix(
+        in oklab,
+        var(--color-c2) 10%,
+        transparent
+    );
+
+    --color-textarea-disabled-bg: var(--color-neutral-50);
+    --color-textarea-disabled-text: var(--color-neutral-400);
+
+    --color-textarea-error-bg: color-mix(
+        in oklab,
+        var(--color-red-50) 10%,
+        transparent
+    );
+    --color-textarea-error-border: var(--color-red-200);
+    --color-textarea-error-hover-border: var(--color-red-300);
+    --color-textarea-error-text: var(--color-red-600);
+    --color-textarea-error-focus: var(--color-red-500);
+    --color-textarea-error-ring: var(--color-red-100);
+
+    --color-textarea-text: var(--color-c1);
+    --color-textarea-label: var(--color-c1);
+    --color-textarea-placeholder: var(--color-placeholder-c);
+    --color-textarea-icon: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
+}
+
+div.textarea-container {
+    @apply flex flex-col gap-1.5 w-full;
+}
+
+label.textarea-label {
+    @apply block text-sm font-semibold tracking-tight select-none;
+    @apply text-textarea-label;
+}
+
+label.textarea-label-error {
+    @apply text-textarea-error-text;
+}
+
+div.textarea-field-wrapper {
+    @apply relative w-full flex items-start;
+}
+
+textarea.textarea-box {
+    @apply w-full px-3 py-2 rounded-lg border text-sm shadow-sm transition-all duration-200 ease-in-out resize-none leading-relaxed focus:outline-none focus:ring-4 disabled:cursor-not-allowed;
+    @apply bg-textarea-bg border-textarea-border text-textarea-text placeholder:text-textarea-placeholder focus:border-textarea-focus-border focus:ring-textarea-focus-ring disabled:bg-textarea-disabled-bg disabled:text-textarea-disabled-text;
+}
+
+textarea.textarea-box:not(:disabled):not(.textarea-error):hover {
+    @apply border-textarea-hover-border;
+}
+
+textarea.textarea-box-with-icon {
+    @apply pr-10 rtl:pl-10 rtl:pr-3;
+}
+
+textarea.textarea-error {
+    @apply focus:ring-4;
+    @apply bg-textarea-error-bg border-textarea-error-border focus:border-textarea-error-focus focus:ring-textarea-error-ring;
+}
+
+textarea.textarea-error:not(:disabled):hover {
+    @apply border-textarea-error-hover-border;
+}
+
+.textarea-end-icon-container {
+    @apply absolute right-3 top-3 rtl:left-3 rtl:right-auto flex items-center justify-center;
+    @apply text-textarea-icon;
+}
+
+.textarea-icon {
+    @apply text-lg;
+}

@@ -1,0 +1,47 @@
+@import '../../globals.css';
+
+@theme {
+    --color-page-header-bg: var(--color-white);
+    --color-page-header-border: var(--color-border-transparent-c);
+    --color-page-header-badge-bg: var(--color-neutral-50);
+    --color-page-header-badge-border: var(--color-neutral-100);
+    --color-page-header-icon: var(--color-c1);
+    --color-page-header-text-title: var(--color-title-c);
+    --color-page-header-text-subtitle: var(--color-subtitle-c);
+}
+
+header.page-view-header {
+    @apply flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 border rounded-xl text-left rtl:text-right shadow-sm transition-all duration-200;
+    @apply bg-page-header-bg border-page-header-border;
+}
+
+header.page-view-header-flush {
+    @apply border-none bg-transparent shadow-none p-0 rounded-none;
+}
+
+div.page-header-identity {
+    @apply flex items-center gap-4 w-auto;
+}
+
+div.page-header-icon-badge {
+    @apply flex items-center justify-center p-3 border rounded-xl;
+    @apply bg-page-header-badge-bg border-page-header-badge-border text-page-header-icon;
+}
+
+div.page-header-details {
+    @apply flex flex-col gap-1;
+}
+
+h1.page-header-title {
+    @apply text-lg font-bold tracking-tight;
+    @apply text-page-header-text-title;
+}
+
+p.page-header-subtitle {
+    @apply text-xs font-medium leading-relaxed;
+    @apply text-page-header-text-subtitle;
+}
+
+div.page-header-actions {
+    @apply flex items-center justify-start sm:justify-end gap-3 w-full sm:w-auto shrink-0;
+}

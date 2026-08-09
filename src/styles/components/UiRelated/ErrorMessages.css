@@ -1,0 +1,37 @@
+@import '../../globals.css';
+
+@theme {
+    /* Error Notification Frame Colors */
+    --color-error-box-bg: var(--color-red-50);
+    --color-error-box-border: var(--color-red-200);
+
+    /* Error Typography & Marker Elements */
+    --color-error-text: var(--color-red-600);
+    --color-error-bullet: var(--color-red-500);
+}
+
+div.error-messages-box {
+    @apply rounded-md p-3 text-sm border;
+    @apply bg-error-box-bg text-error-text border-error-box-border;
+}
+
+div.error-messages-text-only {
+    @apply mt-0.5 text-xs font-medium;
+    @apply text-error-text;
+}
+
+div.error-messages-box,
+div.error-messages-text-only {
+    ul.error-list {
+        @apply list-disc list-inside space-y-1 text-left rtl:text-right;
+
+        li {
+            @apply inline-block w-full before:content-['•'] before:me-2;
+            @apply before:text-error-bullet;
+        }
+    }
+
+    p.error-text {
+        @apply text-left rtl:text-right;
+    }
+}

@@ -1,0 +1,67 @@
+@import '../../globals.css';
+
+@theme {
+    --color-table-bg: var(--color-white);
+    --color-table-border: var(--color-border-transparent-c);
+    --color-table-thead-bg: color-mix(
+        in oklab,
+        var(--color-neutral-50) 70%,
+        transparent
+    );
+    --color-table-th-text: var(--color-title-c);
+    --color-table-row-hover: color-mix(
+        in oklab,
+        var(--color-neutral-100) 70%,
+        transparent
+    );
+}
+
+div.table-wrapper {
+    @apply w-full flex flex-col gap-3;
+}
+
+div.table-empty {
+    @apply w-full flex items-center justify-center p-12 border border-dashed rounded-xl text-center shadow-sm;
+    @apply bg-table-bg border-table-border;
+}
+
+div.table-container {
+    @apply w-full overflow-x-auto border rounded-xl shadow-sm scrollbar-thin;
+    @apply bg-table-bg border-table-border;
+}
+
+table.data-table {
+    @apply w-full border-collapse text-sm text-left rtl:text-right;
+}
+
+table.data-table thead tr {
+    @apply border-b select-none;
+    @apply bg-table-thead-bg border-table-border;
+}
+
+table.data-table th {
+    @apply px-5 py-3.5 text-xs font-bold tracking-wider uppercase whitespace-nowrap;
+    @apply text-table-th-text;
+}
+
+table.data-table tbody tr.table-row-interactive {
+    @apply border-b last:border-b-0 cursor-pointer transition-all duration-200;
+    @apply border-table-border hover:bg-table-row-hover;
+}
+
+table.data-table td {
+    @apply px-5 py-4 whitespace-nowrap;
+}
+
+div.table-pagination {
+    @apply flex items-center justify-between px-4 py-2.5 text-xs rounded-xl border shadow-sm select-none;
+    @apply bg-table-bg border-table-border text-table-th-text;
+}
+
+div.pagination-actions {
+    @apply flex items-center gap-2;
+}
+
+span.pagination-page-indicator {
+    @apply font-semibold px-2;
+}

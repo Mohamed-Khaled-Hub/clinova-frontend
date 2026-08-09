@@ -1,0 +1,13 @@
+@import '../../../../globals.css';
+
+form.visit-form-element {
+    @apply flex flex-col gap-5;
+}
+
+div.visit-notes-editing-stack {
+    @apply flex flex-col gap-4 w-full;
+}
+
+.visit-add-note-btn-wrapper {
+    @apply w-fit mt-1;
+}

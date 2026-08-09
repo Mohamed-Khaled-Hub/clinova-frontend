@@ -1,0 +1,31 @@
+@import '../../globals.css';
+
+@theme {
+    --color-auth-card-bg: var(--color-white);
+    --color-auth-card-border: var(--color-border-transparent-c);
+    --color-auth-card-title: var(--color-title-c);
+    --color-auth-card-subtitle: var(--color-subtitle-c);
+}
+
+div.auth-card-container {
+    @apply w-full max-w-md space-y-6 rounded-xl p-8 shadow-sm border;
+    @apply bg-auth-card-bg border-auth-card-border;
+}
+
+header.auth-card-header {
+    @apply flex flex-col gap-1 text-center rtl:text-center;
+}
+
+h1.auth-card-title {
+    @apply text-2xl font-bold tracking-tight flex items-center justify-center gap-2;
+    @apply text-auth-card-title;
+}
+
+p.auth-card-subtitle {
+    @apply text-sm font-medium;
+    @apply text-auth-card-subtitle;
+}
+
+form.auth-card-form {
+    @apply flex flex-col gap-4;
+}

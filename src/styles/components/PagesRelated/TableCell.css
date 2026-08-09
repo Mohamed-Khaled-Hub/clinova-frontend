@@ -1,0 +1,39 @@
+@import '../../globals.css';
+
+@theme {
+    --color-cell-text: var(--color-neutral-800);
+    --color-cell-text-light: var(--color-neutral-400);
+}
+
+div.cell-base {
+    @apply flex items-center gap-3 min-w-0 text-sm;
+    @apply text-cell-text;
+}
+
+div.cell-numeric {
+    @apply text-sm tracking-wide;
+    @apply text-cell-text;
+}
+
+div.cell-subtext {
+    @apply flex items-center gap-2 tracking-wide font-medium text-xs;
+    @apply text-cell-text;
+}
+
+div.cell-stacked {
+    @apply flex flex-col gap-1 w-full justify-center font-medium text-xs;
+}
+
+.cell-decor-icon {
+    @apply flex-shrink-0;
+    @apply text-cell-text-light;
+}
+
+div.cell-content-body {
+    @apply flex flex-col min-w-0;
+}
+
+span.cell-empty {
+    @apply font-bold select-none px-2;
+    @apply text-cell-text-light;
+}

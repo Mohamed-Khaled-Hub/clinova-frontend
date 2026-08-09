@@ -1,0 +1,35 @@
+@import '../../../globals.css';
+
+@theme {
+    --color-analytics-text-main: var(--color-text-primary);
+    --color-analytics-text-muted: var(--color-text-muted);
+    --color-analytics-border: var(--color-border-transparent-c);
+    --color-analytics-bg: var(--color-white);
+}
+
+div.analytics-summary-grid {
+    @apply grid gap-6 mb-8;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+div.analytics-charts-matrix {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-6;
+}
+
+div.chart-container {
+    @apply p-6 border rounded-xl shadow-xs;
+    @apply bg-analytics-bg border-analytics-border;
+}
+
+div.chart-container.full-width {
+    @apply lg:col-span-2;
+}
+
+h4.chart-title {
+    @apply text-lg font-semibold mt-0 mb-6;
+    @apply text-analytics-text-main;
+}
+
+div.chart-wrapper {
+    @apply w-full;
+}

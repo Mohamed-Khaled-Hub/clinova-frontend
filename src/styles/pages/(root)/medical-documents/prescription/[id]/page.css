@@ -1,0 +1,307 @@
+@import '../../../../../globals.css';
+
+@theme {
+    --color-rx-primary: var(--color-c4);
+    --color-rx-primary-dark: var(--color-c3);
+    --color-rx-text-main: var(--color-text-primary);
+    --color-rx-text-muted: var(--color-text-muted);
+    --color-rx-border: var(--color-border-transparent-c);
+    --color-rx-bg: var(--color-white);
+}
+
+/* Page Setup for A5 Portrait */
+@page {
+    size: A5 portrait;
+    margin: 8mm;
+}
+
+@media print {
+    html,
+    body {
+        height: auto !important;
+        min-height: 0 !important;
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    div.prescription-card-container,
+    div.prescription-card {
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+    }
+
+    /* Background Watermark */
+    div.prescription-watermark-wrapper {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        height: 100% !important;
+    }
+
+    /* Print Table Layout */
+    table.prescription-print-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        page-break-inside: auto !important;
+    }
+
+    thead {
+        display: table-header-group !important;
+    }
+
+    tfoot {
+        display: table-footer-group !important;
+    }
+
+    tbody {
+        display: table-row-group !important;
+    }
+
+    td.prescription-table-cell-body {
+        vertical-align: top !important;
+    }
+
+    /* Spacer inside tfoot matching the height of the fixed footer container */
+    div.prescription-tfoot-spacer {
+        height: 105px !important;
+        display: block !important;
+    }
+
+    /* Fixed Footer + Signature locked to the physical bottom of each page */
+    div.prescription-footer-container {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 20;
+        background: white !important;
+    }
+
+    li,
+    .prescription-diagnosis-block {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+/* Screen Preview & Container Styles */
+div.prescription-card-container {
+    @apply relative mx-auto max-w-[148mm];
+}
+
+div.prescription-print-btn-wrapper {
+    @apply absolute top-2 z-20 opacity-0 pointer-events-none transition-opacity duration-200 print:hidden;
+    @apply group-hover:opacity-100 group-hover:pointer-events-auto;
+    @apply ltr:right-2 rtl:left-2;
+}
+
+div.prescription-card {
+    @apply relative mx-auto w-full max-w-[148mm] min-h-[210mm] border p-5 shadow-lg rounded-sm print:shadow-none print:border-none print:p-0;
+    @apply bg-rx-bg border-rx-border text-rx-text-main flex flex-col justify-between;
+}
+
+table.prescription-print-table {
+    @apply w-full border-collapse;
+}
+
+td.prescription-table-cell-body {
+    @apply align-top;
+}
+
+div.prescription-body-content {
+    @apply relative z-10 py-3 flex flex-col justify-start;
+}
+
+/* Watermark */
+div.prescription-watermark-wrapper {
+    @apply absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none select-none;
+}
+
+div.prescription-watermark-container {
+    @apply relative h-80 w-80;
+}
+
+/* Header Section */
+div.prescription-header-wrapper {
+    @apply pb-1;
+}
+
+div.prescription-header {
+    @apply flex items-center justify-between gap-2 pb-2;
+}
+
+div.prescription-header-main-logo {
+    @apply w-1/3 text-left;
+}
+
+div.prescription-header-secondary-logo {
+    @apply w-1/3 flex justify-center;
+}
+
+div.prescription-logo-wrapper {
+    @apply relative h-12 w-16;
+}
+
+div.prescription-logo-wrapper.is-main {
+    @apply h-14 w-14;
+}
+
+div.prescription-header-info {
+    @apply w-1/3 text-right space-y-0.5;
+}
+
+h1.prescription-clinic-name {
+    @apply text-base font-bold text-rx-primary-dark;
+}
+
+h2.prescription-doctor-name {
+    @apply text-sm font-semibold text-rx-text-main;
+}
+
+p.prescription-doctor-specialization {
+    @apply text-[10px] font-medium text-rx-text-muted;
+}
+
+/* Dividers */
+div.prescription-divider-gradient-header {
+    @apply h-[2px] w-full my-1 bg-gradient-to-r from-transparent via-[color-mix(in_oklab,var(--color-c4)_40%,transparent)] to-transparent;
+}
+
+div.prescription-divider-gradient-bottom {
+    @apply h-[1px] w-full mt-2 bg-gradient-to-r from-transparent via-[var(--color-rx-border)] to-transparent;
+}
+
+div.prescription-divider-gradient-footer {
+    @apply h-[2px] w-full my-1.5 bg-gradient-to-r from-transparent via-[color-mix(in_oklab,var(--color-c2)_40%,transparent)] to-transparent;
+}
+
+/* Metadata Section */
+div.prescription-metadata-wrapper {
+    @apply mt-2 text-[11px] space-y-1.5 px-0.5 text-rx-text-main;
+}
+
+div.prescription-metadata-row {
+    @apply flex flex-wrap items-center gap-x-4 gap-y-1;
+}
+
+div.prescription-metadata-vitals-row {
+    @apply flex flex-wrap items-center gap-1 pt-0.5;
+}
+
+div.prescription-metadata-item {
+    @apply flex items-center gap-1;
+}
+
+div.prescription-vitals-label {
+    @apply flex items-center gap-1 font-bold text-rx-text-main;
+}
+
+.prescription-metadata-icon {
+    @apply shrink-0 text-[10px] text-rx-primary;
+}
+
+span.prescription-metadata-key {
+    @apply font-bold !text-[var(--color-text-primary)];
+}
+
+span.prescription-metadata-value {
+    @apply font-normal text-[var(--color-text-primary)];
+}
+
+/* Body Items */
+div.prescription-diagnosis-block {
+    @apply mb-3 pb-2 border-b border-dashed border-rx-border/60;
+}
+
+h3.prescription-diagnosis-title {
+    @apply text-xs font-bold text-rx-primary-dark tracking-wider mb-0.5;
+}
+
+p.prescription-diagnosis-text {
+    @apply text-xs font-medium text-rx-text-main leading-relaxed;
+}
+
+div.prescription-rx-symbol {
+    @apply text-2xl font-bold mb-2 italic text-rx-primary-dark;
+}
+
+div.prescription-notes-container {
+    @apply px-4;
+}
+
+p.prescription-notes-empty {
+    @apply italic text-[11px] text-rx-text-muted;
+}
+
+ul.prescription-notes-list {
+    @apply list-disc space-y-1.5 text-xs font-medium leading-relaxed text-rx-text-main;
+}
+
+li.prescription-note-item {
+    @apply whitespace-pre-line;
+}
+
+/* Footer Container & Signature Section */
+div.prescription-footer-container {
+    @apply pt-2;
+}
+
+div.prescription-tfoot-spacer {
+    @apply h-[105px] print:block hidden;
+}
+
+div.prescription-signature-wrapper {
+    @apply flex w-full justify-end py-1 px-1 mb-1;
+}
+
+div.prescription-signature-box {
+    @apply ms-auto min-w-[150px] text-end space-y-1;
+}
+
+span.prescription-signature-label {
+    @apply block text-xs font-bold text-center uppercase tracking-wider text-[var(--color-text-primary)];
+}
+
+div.prescription-signature-area {
+    @apply relative h-5 flex items-end justify-end pb-1;
+}
+
+div.prescription-signature-line {
+    @apply w-full border-b-2 border-dashed border-c1 opacity-50;
+}
+
+/* Footer Section */
+div.prescription-footer-wrapper {
+    @apply pt-0.5;
+}
+
+div.prescription-footer {
+    @apply text-center text-[10px] flex flex-col items-center gap-1;
+}
+
+div.prescription-footer-item {
+    @apply flex items-center justify-center gap-1 font-medium !text-[var(--color-text-primary)];
+}
+
+div.prescription-footer-item.is-phone {
+    @apply font-semibold !text-[var(--color-text-primary)];
+}
+
+.prescription-footer-icon {
+    @apply shrink-0 text-rx-primary-dark;
+}

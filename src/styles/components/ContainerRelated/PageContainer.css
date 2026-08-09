@@ -1,0 +1,18 @@
+@import '../../globals.css';
+
+@theme {
+    --color-page-bg: var(--color-white);
+}
+
+div.page-container {
+    @apply w-full max-w-5xl mx-auto flex flex-col gap-5;
+    @apply bg-page-bg;
+}
+
+div.page-container.full-height-page {
+    @apply min-h-screen;
+}
+
+div.page-container.center-content-page {
+    @apply items-center justify-center;
+}

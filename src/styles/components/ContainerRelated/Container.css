@@ -1,0 +1,13 @@
+@import '../../globals.css';
+
+div.container {
+    @apply p-4;
+}
+
+div.container.no-padding {
+    @apply p-0;
+}
+
+div.container.margined {
+    @apply mx-auto;
+}

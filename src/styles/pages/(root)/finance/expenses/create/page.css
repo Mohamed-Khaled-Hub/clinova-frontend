@@ -1,0 +1,5 @@
+@import '../../../../../globals.css';
+
+form.expense-form-element {
+    @apply flex flex-col gap-5;
+}

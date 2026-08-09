@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+@theme {
+    /* Heights */
+    --nav-height: 200px;
+
+    /* Z-Index */
+    --loading-z-index: 100;
+    --popup-z-index: 99;
+    --nav-z-index: 98;
+
+    /* Colors: https://coolors.co/030a12-061423-113962-15579a-327ac3-78a3ce-a9c1db-f1f5f9 */
+    --color-c1: #030a12;
+    --color-c2: #061423;
+    --color-c3: #113962;
+    --color-c4: #15579a;
+    --color-c5: #327ac3;
+    --color-c6: #78a3ce;
+    --color-c7: #a9c1db;
+    --color-c8: #f1f5f9;
+
+    /* Coloring Variables */
+    --color-title-c: var(--color-c1); /* c1 */
+    --color-subtitle-c: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    ); /* c2/50 */
+
+    --color-border-c: var(--color-c2); /* c2 */
+    --color-border-transparent-c: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    ); /* c2/50 */
+
+    --color-shadow-c: color-mix(
+        in oklab,
+        var(--color-c2) 15%,
+        transparent
+    ); /* c2/15 */
+
+    --color-key-c: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    ); /* c2/50 */
+    --color-value-c: var(--color-c1); /* c1 */
+
+    --color-avatar-c: var(--color-c3); /* c3 */
+
+    --color-placeholder-c: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    ); /* c2/50 */
+
+    --color-text-primary: var(--color-c1);
+    --color-text-accent: color-mix(in oklab, var(--color-c2) 50%, transparent);
+    --color-text-muted: color-mix(in oklab, var(--color-c2) 50%, transparent);
+    --color-text-fallback: var(--color-neutral-400);
+
+    /* Roles Colors: https://coolors.co/ed254e-bd0f32-f8d53a-b19206-54c445-317c27-056ff0-034aa0 */
+    --color-super-admin: #ed254e;
+    --color-super-admin-darker: #bd0f32;
+
+    --color-admin: #f8d53a;
+    --color-admin-darker: #b19206;
+
+    --color-doctor: #54c445;
+    --color-doctor-darker: #317c27;
+
+    --color-receptionist: #056ff0;
+    --color-receptionist-darker: #034aa0;
+}
