@@ -10,7 +10,7 @@ div.roles-header-divider {
 
 h3.roles-header-title {
     @apply text-sm font-bold uppercase tracking-wider text-left rtl:text-right px-1 select-none;
-    @apply text-text-primary;
+    @apply text-c1;
 }
 
 div.roles-toggle-wrapper {

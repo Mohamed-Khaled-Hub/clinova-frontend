@@ -2,7 +2,7 @@
 
 @theme {
     /* Theme overrides specifically for the Color Picker if needed */
-    --color-picker-bg: var(--color-white);
+    --color-picker-bg: var(--color-c8);
     --color-picker-border: color-mix(
         in oklab,
         var(--color-c2) 25%,

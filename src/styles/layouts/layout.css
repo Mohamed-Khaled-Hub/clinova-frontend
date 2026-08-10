@@ -1,7 +1,7 @@
 @import '../globals.css';
 
 @theme {
-    --color-root-bg: var(--color-white);
+    --color-root-bg: var(--color-c8);
 }
 
 html {

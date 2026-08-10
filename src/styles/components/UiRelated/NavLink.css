@@ -11,7 +11,7 @@
 
     /* Active Component States */
     --color-nav-item-active-bg: var(--color-c2);
-    --color-nav-item-active-text: var(--color-white);
+    --color-nav-item-active-text: var(--color-c8);
 }
 
 a.nav-item-link {

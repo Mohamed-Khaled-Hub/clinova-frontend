@@ -14,7 +14,7 @@ div.form-top-actions-cluster {
 
 h2.form-section-heading {
     @apply text-sm font-bold uppercase tracking-wider text-left rtl:text-right px-1 select-none;
-    @apply text-text-primary;
+    @apply text-c1;
 }
 
 div.form-actions-row {

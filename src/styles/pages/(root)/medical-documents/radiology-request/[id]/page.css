@@ -3,10 +3,18 @@
 @theme {
     --color-radiology-primary: var(--color-c4);
     --color-radiology-primary-dark: var(--color-c3);
-    --color-radiology-text-main: var(--color-text-primary);
-    --color-radiology-text-muted: var(--color-text-muted);
-    --color-radiology-border: var(--color-border-transparent-c);
-    --color-radiology-bg: var(--color-white);
+    --color-radiology-text-main: var(--color-c1);
+    --color-radiology-text-muted: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
+    --color-radiology-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+    --color-radiology-bg: var(--color-c8);
 }
 
 /* Page Setup for A5 Portrait */
@@ -217,11 +225,11 @@ div.radiology-request-vitals-label {
 }
 
 span.radiology-request-metadata-key {
-    @apply font-bold !text-[var(--color-text-primary)];
+    @apply font-bold !text-c1;
 }
 
 span.radiology-request-metadata-value {
-    @apply font-normal text-[var(--color-text-primary)];
+    @apply font-normal text-c1;
 }
 
 /* Body Items & Sections */
@@ -279,7 +287,7 @@ div.radiology-request-signature-box {
 }
 
 span.radiology-request-signature-label {
-    @apply block text-xs font-bold text-center uppercase tracking-wider text-[var(--color-text-primary)];
+    @apply block text-xs font-bold text-center uppercase tracking-wider text-c1;
 }
 
 div.radiology-request-signature-area {
@@ -300,11 +308,11 @@ div.radiology-request-footer {
 }
 
 div.radiology-request-footer-item {
-    @apply flex items-center justify-center gap-1 font-medium !text-[var(--color-text-primary)];
+    @apply flex items-center justify-center gap-1 font-medium !text-c1;
 }
 
 div.radiology-request-footer-item.is-phone {
-    @apply font-semibold !text-[var(--color-text-primary)];
+    @apply font-semibold !text-c1;
 }
 
 .radiology-request-footer-icon {

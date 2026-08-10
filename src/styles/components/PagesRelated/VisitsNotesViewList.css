@@ -1,9 +1,13 @@
 @import '../../globals.css';
 
 @theme {
-    --color-note-group-bg: var(--color-white);
-    --color-note-text-main: var(--color-text-primary);
-    --color-note-text-muted: var(--color-text-muted);
+    --color-note-group-bg: var(--color-c8);
+    --color-note-text-main: var(--color-c1);
+    --color-note-text-muted: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
     --color-note-text-hover: var(--color-c4);
 }
 

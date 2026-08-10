@@ -2,7 +2,7 @@
 
 @theme {
     /* Standard Input Themes */
-    --color-input-bg: var(--color-white);
+    --color-input-bg: var(--color-c8);
     --color-input-border: color-mix(in oklab, var(--color-c2) 25%, transparent);
 
     /* Hover State */
@@ -41,7 +41,11 @@
     /* Typography, Icons & Placeholders */
     --color-input-text: var(--color-c1);
     --color-input-label: var(--color-c1);
-    --color-input-placeholder: var(--color-placeholder-c);
+    --color-input-placeholder: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
     --color-input-icon: color-mix(in oklab, var(--color-c2) 50%, transparent);
     --color-input-icon-hover: var(--color-c1);
 }

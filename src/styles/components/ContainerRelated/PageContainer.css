@@ -1,7 +1,7 @@
 @import '../../globals.css';
 
 @theme {
-    --color-page-bg: var(--color-white);
+    --color-page-bg: var(--color-c8);
 }
 
 div.page-container {

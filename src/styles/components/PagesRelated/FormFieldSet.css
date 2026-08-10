@@ -1,9 +1,13 @@
 @import '../../globals.css';
 
 @theme {
-    --color-fieldset-bg: var(--color-white);
-    --color-fieldset-border: var(--color-border-transparent-c);
-    --color-fieldset-text-title: var(--color-title-c);
+    --color-fieldset-bg: var(--color-c8);
+    --color-fieldset-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+    --color-fieldset-text-title: var(--color-c1);
 }
 
 fieldset.form-fieldset {

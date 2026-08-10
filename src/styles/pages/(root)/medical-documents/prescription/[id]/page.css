@@ -3,10 +3,14 @@
 @theme {
     --color-rx-primary: var(--color-c4);
     --color-rx-primary-dark: var(--color-c3);
-    --color-rx-text-main: var(--color-text-primary);
-    --color-rx-text-muted: var(--color-text-muted);
-    --color-rx-border: var(--color-border-transparent-c);
-    --color-rx-bg: var(--color-white);
+    --color-rx-text-main: var(--color-c1);
+    --color-rx-text-muted: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
+    --color-rx-border: color-mix(in oklab, var(--color-c2) 25%, transparent);
+    --color-rx-bg: var(--color-c8);
 }
 
 /* Page Setup for A5 Portrait */
@@ -216,11 +220,11 @@ div.prescription-vitals-label {
 }
 
 span.prescription-metadata-key {
-    @apply font-bold !text-[var(--color-text-primary)];
+    @apply font-bold !text-c1;
 }
 
 span.prescription-metadata-value {
-    @apply font-normal text-[var(--color-text-primary)];
+    @apply font-normal text-c1;
 }
 
 /* Body Items */
@@ -274,7 +278,7 @@ div.prescription-signature-box {
 }
 
 span.prescription-signature-label {
-    @apply block text-xs font-bold text-center uppercase tracking-wider text-[var(--color-text-primary)];
+    @apply block text-xs font-bold text-center uppercase tracking-wider text-c1;
 }
 
 div.prescription-signature-area {
@@ -295,11 +299,11 @@ div.prescription-footer {
 }
 
 div.prescription-footer-item {
-    @apply flex items-center justify-center gap-1 font-medium !text-[var(--color-text-primary)];
+    @apply flex items-center justify-center gap-1 font-medium !text-c1;
 }
 
 div.prescription-footer-item.is-phone {
-    @apply font-semibold !text-[var(--color-text-primary)];
+    @apply font-semibold !text-c1;
 }
 
 .prescription-footer-icon {

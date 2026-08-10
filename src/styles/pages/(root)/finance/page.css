@@ -1,10 +1,18 @@
 @import '../../../globals.css';
 
 @theme {
-    --color-analytics-text-main: var(--color-text-primary);
-    --color-analytics-text-muted: var(--color-text-muted);
-    --color-analytics-border: var(--color-border-transparent-c);
-    --color-analytics-bg: var(--color-white);
+    --color-analytics-text-main: var(--color-c1);
+    --color-analytics-text-muted: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
+    --color-analytics-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+    --color-analytics-bg: var(--color-c8);
 }
 
 div.analytics-summary-grid {

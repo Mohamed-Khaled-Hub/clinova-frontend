@@ -1,7 +1,6 @@
 @import '../../globals.css';
 
 @theme {
-    /* Track Active States */
     --color-toggle-track-active-bg: var(--color-emerald-400);
     --color-toggle-track-active-border: var(--color-emerald-700);
     --color-toggle-track-active-shadow: color-mix(
@@ -9,8 +8,6 @@
         var(--color-emerald-600) 25%,
         transparent
     );
-
-    /* Track Inactive States */
     --color-toggle-track-inactive-bg: var(--color-neutral-400);
     --color-toggle-track-inactive-border: var(--color-neutral-700);
     --color-toggle-track-inactive-shadow: color-mix(
@@ -18,9 +15,7 @@
         var(--color-neutral-600) 25%,
         transparent
     );
-
-    /* Moving Thumb Variables */
-    --color-toggle-thumb-bg: var(--color-white);
+    --color-toggle-thumb-bg: var(--color-c8);
 }
 
 div.toggle-wrapper {

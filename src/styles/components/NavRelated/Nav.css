@@ -2,17 +2,17 @@
 
 @theme {
     /* Navbar Core Structural Panels */
-    --color-nav-bg: var(--color-white);
-    --color-nav-border: var(--color-border-c);
-    --color-nav-shadow: var(--color-shadow-c);
+    --color-nav-bg: var(--color-c8);
+    --color-nav-border: var(--color-c2);
+    --color-nav-shadow: color-mix(in oklab, var(--color-c2) 15%, transparent);
 
     /* Avatar & Account Circles */
-    --color-nav-avatar-bg: var(--color-avatar-c);
-    --color-nav-avatar-text: var(--color-white);
+    --color-nav-avatar-bg: var(--color-c3);
+    --color-nav-avatar-text: var(--color-c8);
 
     /* Typography Hierarchies */
-    --color-nav-label: var(--color-key-c);
-    --color-nav-value: var(--color-value-c);
+    --color-nav-label: color-mix(in oklab, var(--color-c2) 50%, transparent);
+    --color-nav-value: var(--color-c1);
 }
 
 nav.navbar-container {

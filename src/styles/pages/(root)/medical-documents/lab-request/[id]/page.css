@@ -3,10 +3,14 @@
 @theme {
     --color-lab-primary: var(--color-c4);
     --color-lab-primary-dark: var(--color-c3);
-    --color-lab-text-main: var(--color-text-primary);
-    --color-lab-text-muted: var(--color-text-muted);
-    --color-lab-border: var(--color-border-transparent-c);
-    --color-lab-bg: var(--color-white);
+    --color-lab-text-main: var(--color-c1);
+    --color-lab-text-muted: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
+    --color-lab-border: color-mix(in oklab, var(--color-c2) 25%, transparent);
+    --color-lab-bg: var(--color-c8);
 }
 
 /* Page Setup for A5 Portrait */
@@ -216,11 +220,11 @@ div.lab-request-vitals-label {
 }
 
 span.lab-request-metadata-key {
-    @apply font-bold !text-[var(--color-text-primary)];
+    @apply font-bold !text-c1;
 }
 
 span.lab-request-metadata-value {
-    @apply font-normal text-[var(--color-text-primary)];
+    @apply font-normal text-c1;
 }
 
 /* Body Items */
@@ -274,7 +278,7 @@ div.lab-request-signature-box {
 }
 
 span.lab-request-signature-label {
-    @apply block text-xs font-bold text-center uppercase tracking-wider text-[var(--color-text-primary)];
+    @apply block text-xs font-bold text-center uppercase tracking-wider text-c1;
 }
 
 div.lab-request-signature-area {
@@ -295,11 +299,11 @@ div.lab-request-footer {
 }
 
 div.lab-request-footer-item {
-    @apply flex items-center justify-center gap-1 font-medium !text-[var(--color-text-primary)];
+    @apply flex items-center justify-center gap-1 font-medium !text-c1;
 }
 
 div.lab-request-footer-item.is-phone {
-    @apply font-semibold !text-[var(--color-text-primary)];
+    @apply font-semibold !text-c1;
 }
 
 .lab-request-footer-icon {

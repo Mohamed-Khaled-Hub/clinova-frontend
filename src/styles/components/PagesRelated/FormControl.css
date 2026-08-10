@@ -1,7 +1,11 @@
 @import '../../globals.css';
 
 @theme {
-    --color-form-control-label: var(--color-key-c);
+    --color-form-control-label: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
 }
 
 div.form-control {

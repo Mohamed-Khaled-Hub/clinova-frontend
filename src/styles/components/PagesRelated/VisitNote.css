@@ -1,10 +1,22 @@
 @import '../../globals.css';
 
 @theme {
-    --color-visit-note-border: var(--color-border-transparent-c);
-    --color-suggestion-bg: var(--color-white);
-    --color-suggestion-border: var(--color-border-transparent-c);
-    --color-suggestion-divider: var(--color-border-transparent-c);
+    --color-visit-note-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+    --color-suggestion-bg: var(--color-c8);
+    --color-suggestion-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+    --color-suggestion-divider: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
     --color-suggestion-text: var(--color-neutral-800);
     --color-suggestion-hover-bg: var(--color-neutral-100);
     --color-suggestion-loader: var(--color-neutral-500);

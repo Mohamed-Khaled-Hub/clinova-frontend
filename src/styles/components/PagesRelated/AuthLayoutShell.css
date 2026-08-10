@@ -1,10 +1,18 @@
 @import '../../globals.css';
 
 @theme {
-    --color-auth-card-bg: var(--color-white);
-    --color-auth-card-border: var(--color-border-transparent-c);
-    --color-auth-card-title: var(--color-title-c);
-    --color-auth-card-subtitle: var(--color-subtitle-c);
+    --color-auth-card-bg: var(--color-c8);
+    --color-auth-card-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+    --color-auth-card-title: var(--color-c1);
+    --color-auth-card-subtitle: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
 }
 
 div.auth-card-container {

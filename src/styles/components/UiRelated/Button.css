@@ -2,7 +2,7 @@
 
 @theme {
     /* Normal Light Variant Styles */
-    --color-btn-normal-light-bg: var(--color-white);
+    --color-btn-normal-light-bg: var(--color-c8);
     --color-btn-normal-light-text: var(--color-c2);
     --color-btn-normal-light-border: color-mix(
         in oklab,
@@ -22,12 +22,12 @@
 
     /* Normal Dark Variant Styles */
     --color-btn-normal-dark-bg: var(--color-c2);
-    --color-btn-normal-dark-text: var(--color-white);
+    --color-btn-normal-dark-text: var(--color-c8);
     --color-btn-normal-dark-border: transparent;
     --color-btn-normal-dark-hover-bg: var(--color-c1);
 
     /* Destructive Light Variant Styles */
-    --color-btn-destructive-light-bg: var(--color-white);
+    --color-btn-destructive-light-bg: var(--color-c8);
     --color-btn-destructive-light-text: var(--color-c2);
     --color-btn-destructive-light-border: color-mix(
         in oklab,
@@ -40,10 +40,10 @@
 
     /* Destructive Dark Variant Styles */
     --color-btn-destructive-dark-bg: var(--color-c2);
-    --color-btn-destructive-dark-text: var(--color-white);
+    --color-btn-destructive-dark-text: var(--color-c8);
     --color-btn-destructive-dark-border: transparent;
     --color-btn-destructive-dark-hover-bg: var(--color-red-600);
-    --color-btn-destructive-dark-hover-text: var(--color-white);
+    --color-btn-destructive-dark-hover-text: var(--color-c8);
 
     /* Disabled Variant Styles */
     --color-btn-disabled-bg: color-mix(

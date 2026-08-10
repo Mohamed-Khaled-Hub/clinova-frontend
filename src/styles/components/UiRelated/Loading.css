@@ -2,7 +2,7 @@
 
 @theme {
     --color-loading-bg: var(--color-c2);
-    --color-loading-text: var(--color-white);
+    --color-loading-text: var(--color-c8);
 }
 
 div.loading {

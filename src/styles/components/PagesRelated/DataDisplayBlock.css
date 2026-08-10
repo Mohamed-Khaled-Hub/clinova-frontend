@@ -12,6 +12,12 @@
         var(--color-neutral-100) 40%,
         transparent
     );
+    --color-data-block-text-muted: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
+    --color-data-block-text-fallback: var(--color-neutral-400);
 }
 
 .data-display-box {
@@ -34,15 +40,15 @@
 
 .data-block-label {
     @apply text-xs font-semibold tracking-wide select-none;
-    @apply text-text-muted;
+    @apply text-data-block-text-muted;
 }
 
 .data-block-value {
     @apply text-sm font-semibold;
-    @apply text-text-primary;
+    @apply text-c1;
 }
 
 .data-block-fallback {
     @apply font-medium select-none;
-    @apply text-text-fallback;
+    @apply text-data-block-text-fallback;
 }

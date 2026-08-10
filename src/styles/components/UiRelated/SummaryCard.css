@@ -1,10 +1,18 @@
 @import '../../globals.css';
 
 @theme {
-    --color-summary-card-text-main: var(--color-text-primary);
-    --color-summary-card-text-muted: var(--color-text-muted);
-    --color-summary-card-border: var(--color-border-transparent-c);
-    --color-summary-card-bg: var(--color-white);
+    --color-summary-card-text-main: var(--color-c1);
+    --color-summary-card-text-muted: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
+    --color-summary-card-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+    --color-summary-card-bg: var(--color-c8);
     --color-summary-card-icon: var(--color-c1);
 }
 

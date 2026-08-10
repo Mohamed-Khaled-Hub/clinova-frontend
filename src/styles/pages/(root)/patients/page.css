@@ -1,8 +1,12 @@
 @import '../../../globals.css';
 
 @theme {
-    --color-patients-bg: var(--color-white);
-    --color-patients-border: var(--color-border-transparent-c);
+    --color-patients-bg: var(--color-c8);
+    --color-patients-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
 }
 
 div.search-bar {

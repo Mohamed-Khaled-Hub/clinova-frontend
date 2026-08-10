@@ -1,14 +1,14 @@
 @import '../../globals.css';
 
 @theme {
-    --color-table-bg: var(--color-white);
-    --color-table-border: var(--color-border-transparent-c);
+    --color-table-bg: var(--color-c8);
+    --color-table-border: color-mix(in oklab, var(--color-c2) 25%, transparent);
     --color-table-thead-bg: color-mix(
         in oklab,
         var(--color-neutral-50) 70%,
         transparent
     );
-    --color-table-th-text: var(--color-title-c);
+    --color-table-th-text: var(--color-c1);
     --color-table-row-hover: color-mix(
         in oklab,
         var(--color-neutral-100) 70%,

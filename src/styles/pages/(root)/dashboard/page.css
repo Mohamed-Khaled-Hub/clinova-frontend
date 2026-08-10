@@ -1,7 +1,7 @@
 @import '../../../globals.css';
 
 @theme {
-    --color-dashboard-text: var(--color-title-c);
+    --color-dashboard-text: var(--color-c1);
 }
 
 section.dashboard-summary-section,

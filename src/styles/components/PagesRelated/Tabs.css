@@ -1,11 +1,19 @@
 @import '../../globals.css';
 
 @theme {
-    --color-tab-border-active: var(--color-c4);
-    --color-tab-border-idle: var(--color-border-transparent-c);
-    --color-tab-text-active: var(--color-c4);
-    --color-tab-text-idle: var(--color-text-muted);
-    --color-tab-text-hover: var(--color-title-c);
+    --color-tab-border-active: var(--color-c1);
+    --color-tab-border-idle: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+    --color-tab-text-active: var(--color-c1);
+    --color-tab-text-idle: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
+    --color-tab-text-hover: var(--color-c1);
 }
 
 div.tabs-nav-container {

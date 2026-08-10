@@ -1,13 +1,21 @@
 @import '../../globals.css';
 
 @theme {
-    --color-page-header-bg: var(--color-white);
-    --color-page-header-border: var(--color-border-transparent-c);
+    --color-page-header-bg: var(--color-c8);
+    --color-page-header-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
     --color-page-header-badge-bg: var(--color-neutral-50);
     --color-page-header-badge-border: var(--color-neutral-100);
     --color-page-header-icon: var(--color-c1);
-    --color-page-header-text-title: var(--color-title-c);
-    --color-page-header-text-subtitle: var(--color-subtitle-c);
+    --color-page-header-text-title: var(--color-c1);
+    --color-page-header-text-subtitle: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
 }
 
 header.page-view-header {
