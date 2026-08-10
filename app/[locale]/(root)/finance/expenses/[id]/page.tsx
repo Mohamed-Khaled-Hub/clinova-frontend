@@ -384,7 +384,8 @@ export default function ExpenseDetailsPage({ params }: IdPageProps) {
                             isLocked
                             viewValue={formatTimestamp(
                                 locale,
-                                expense.createdAt
+                                expense.createdAt,
+                                'relative'
                             )}
                         />
 
@@ -393,7 +394,8 @@ export default function ExpenseDetailsPage({ params }: IdPageProps) {
                             isLocked
                             viewValue={formatTimestamp(
                                 locale,
-                                expense.updatedAt
+                                expense.updatedAt,
+                                'relative'
                             )}
                         />
                     </FieldsGrid>

@@ -600,12 +600,20 @@ export default function VisitDetailsPage({ params }: IdPageProps) {
                         <DataDisplayBlock
                             label={tTech('createdAt')}
                             isLocked
-                            viewValue={formatTimestamp(locale, visit.createdAt)}
+                            viewValue={formatTimestamp(
+                                locale,
+                                visit.createdAt,
+                                'relative'
+                            )}
                         />
                         <DataDisplayBlock
                             label={tTech('updatedAt')}
                             isLocked
-                            viewValue={formatTimestamp(locale, visit.updatedAt)}
+                            viewValue={formatTimestamp(
+                                locale,
+                                visit.updatedAt,
+                                'relative'
+                            )}
                         />
                     </FieldsGrid>
 

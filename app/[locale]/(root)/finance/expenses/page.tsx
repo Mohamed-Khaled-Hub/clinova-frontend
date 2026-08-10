@@ -156,11 +156,11 @@ export default function ExpensesPage() {
                 <TableCell variant='stacked'>
                     <div>
                         <span>{tTech('createdAt')}: </span>
-                        {formatTimestamp(locale, expense.createdAt)}
+                        {formatTimestamp(locale, expense.createdAt, 'relative')}
                     </div>
                     <div>
                         <span>{tTech('updatedAt')}: </span>
-                        {formatTimestamp(locale, expense.updatedAt)}
+                        {formatTimestamp(locale, expense.updatedAt, 'relative')}
                     </div>
                 </TableCell>
             ),

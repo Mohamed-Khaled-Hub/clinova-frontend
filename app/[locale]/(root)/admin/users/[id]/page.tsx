@@ -360,7 +360,7 @@ export default function UserDetailsPage({ params }: IdPageProps) {
                             viewValue={formatTimestamp(
                                 locale,
                                 targetUser.createdAt,
-                                'full'
+                                'relative'
                             )}
                         />
 
@@ -370,7 +370,7 @@ export default function UserDetailsPage({ params }: IdPageProps) {
                             viewValue={formatTimestamp(
                                 locale,
                                 targetUser.updatedAt,
-                                'full'
+                                'relative'
                             )}
                         />
                     </FieldsGrid>

@@ -159,11 +159,11 @@ export default function RevenuesPage() {
                 <TableCell variant='stacked'>
                     <div>
                         <span>{tTech('createdAt')}: </span>
-                        {formatTimestamp(locale, revenue.createdAt)}
+                        {formatTimestamp(locale, revenue.createdAt, 'relative')}
                     </div>
                     <div>
                         <span>{tTech('updatedAt')}: </span>
-                        {formatTimestamp(locale, revenue.updatedAt)}
+                        {formatTimestamp(locale, revenue.updatedAt, 'relative')}
                     </div>
                 </TableCell>
             ),

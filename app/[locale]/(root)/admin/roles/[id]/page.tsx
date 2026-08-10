@@ -364,7 +364,7 @@ export default function RoleDetailsPage({ params }: IdPageProps) {
                             viewValue={formatTimestamp(
                                 locale,
                                 targetRole.createdAt,
-                                'full'
+                                'relative'
                             )}
                         />
 
@@ -374,7 +374,7 @@ export default function RoleDetailsPage({ params }: IdPageProps) {
                             viewValue={formatTimestamp(
                                 locale,
                                 targetRole.updatedAt,
-                                'full'
+                                'relative'
                             )}
                         />
                     </FieldsGrid>

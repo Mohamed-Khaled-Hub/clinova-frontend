@@ -420,7 +420,8 @@ export default function PatientDetailsPage({ params }: IdPageProps) {
                             isLocked
                             viewValue={formatTimestamp(
                                 locale,
-                                patient.createdAt
+                                patient.createdAt,
+                                'relative'
                             )}
                         />
 
@@ -429,7 +430,8 @@ export default function PatientDetailsPage({ params }: IdPageProps) {
                             isLocked
                             viewValue={formatTimestamp(
                                 locale,
-                                patient.updatedAt
+                                patient.updatedAt,
+                                'relative'
                             )}
                         />
                     </FieldsGrid>

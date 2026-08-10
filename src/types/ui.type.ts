@@ -8,7 +8,7 @@ export type ButtonVariant =
     | 'destructive-light'
     | 'destructive-dark'
 
-export type DateFormatType = 'full' | 'dateOnly' | 'timeOnly'
+export type DateFormatType = 'full' | 'dateOnly' | 'timeOnly' | 'relative'
 
 export type SelectOptionType = {
     value: string | number

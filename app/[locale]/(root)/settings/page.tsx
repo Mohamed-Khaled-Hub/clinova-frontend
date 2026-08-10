@@ -583,7 +583,8 @@ export default function SettingsPage() {
                             isLocked
                             viewValue={formatTimestamp(
                                 locale,
-                                settings?.createdAt
+                                settings?.createdAt,
+                                'relative'
                             )}
                         />
 
@@ -592,7 +593,8 @@ export default function SettingsPage() {
                             isLocked
                             viewValue={formatTimestamp(
                                 locale,
-                                settings?.updatedAt
+                                settings?.updatedAt,
+                                'relative'
                             )}
                         />
                     </FieldsGrid>

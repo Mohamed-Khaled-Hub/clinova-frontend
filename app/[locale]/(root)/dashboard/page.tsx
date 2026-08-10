@@ -253,11 +253,11 @@ export default function DashboardPage() {
                 <TableCell variant='stacked'>
                     <div>
                         <span>{tTech('createdAt')}: </span>
-                        {formatTimestamp(locale, visit.createdAt)}
+                        {formatTimestamp(locale, visit.createdAt, 'relative')}
                     </div>
                     <div>
                         <span>{tTech('updatedAt')}: </span>
-                        {formatTimestamp(locale, visit.updatedAt)}
+                        {formatTimestamp(locale, visit.updatedAt, 'relative')}
                     </div>
                 </TableCell>
             ),

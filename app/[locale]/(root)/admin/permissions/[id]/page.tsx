@@ -216,7 +216,7 @@ export default function PermissionDetailsPage({ params }: IdPageProps) {
                             viewValue={formatTimestamp(
                                 locale,
                                 targetPermission.createdAt,
-                                'full'
+                                'relative'
                             )}
                         />
 
@@ -226,7 +226,7 @@ export default function PermissionDetailsPage({ params }: IdPageProps) {
                             viewValue={formatTimestamp(
                                 locale,
                                 targetPermission.updatedAt,
-                                'full'
+                                'relative'
                             )}
                         />
                     </FieldsGrid>

@@ -430,7 +430,8 @@ export default function RevenueDetailsPage({ params }: IdPageProps) {
                             isLocked
                             viewValue={formatTimestamp(
                                 locale,
-                                revenue.createdAt
+                                revenue.createdAt,
+                                'relative'
                             )}
                         />
 
@@ -440,7 +441,8 @@ export default function RevenueDetailsPage({ params }: IdPageProps) {
                             isLocked
                             viewValue={formatTimestamp(
                                 locale,
-                                revenue.updatedAt
+                                revenue.updatedAt,
+                                'relative'
                             )}
                         />
                     </FieldsGrid>

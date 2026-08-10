@@ -1,5 +1,7 @@
 // Core
 import axios, { AxiosError } from 'axios'
+import { formatDistanceToNow } from 'date-fns'
+import { ar, enUS } from 'date-fns/locale'
 // Enums
 import { RolesEnum, PermissionsEnum } from '@/src/enums/roles-permissions.enum'
 // Types
@@ -130,6 +132,13 @@ export function formatTimestamp(
     const date = new Date(dateString)
 
     if (isNaN(date.getTime())) return '—'
+
+    if (format === 'relative') {
+        return formatDistanceToNow(date, {
+            addSuffix: true,
+            locale: locale === 'ar' ? ar : enUS,
+        })
+    }
 
     const config: Intl.DateTimeFormatOptions = {}
 

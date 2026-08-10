@@ -208,11 +208,11 @@ export default function PatientsPage() {
                 <TableCell variant='stacked' className='timestamp-stack'>
                     <div>
                         <span>{tTech('createdAt')}: </span>
-                        {formatTimestamp(locale, patient.createdAt)}
+                        {formatTimestamp(locale, patient.createdAt, 'relative')}
                     </div>
                     <div>
                         <span>{tTech('updatedAt')}: </span>
-                        {formatTimestamp(locale, patient.updatedAt)}
+                        {formatTimestamp(locale, patient.updatedAt, 'relative')}
                     </div>
                 </TableCell>
             ),

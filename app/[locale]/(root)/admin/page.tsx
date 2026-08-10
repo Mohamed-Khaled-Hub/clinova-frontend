@@ -259,11 +259,11 @@ export default function AdminPage() {
                 <TableCell variant='stacked'>
                     <div>
                         <span>{tTech('createdAt')}: </span>
-                        {formatTimestamp(locale, sysUser.createdAt)}
+                        {formatTimestamp(locale, sysUser.createdAt, 'relative')}
                     </div>
                     <div>
                         <span>{tTech('updatedAt')}: </span>
-                        {formatTimestamp(locale, sysUser.updatedAt)}
+                        {formatTimestamp(locale, sysUser.updatedAt, 'relative')}
                     </div>
                 </TableCell>
             ),
@@ -284,11 +284,11 @@ export default function AdminPage() {
                 <TableCell variant='stacked'>
                     <div>
                         <span>{tTech('createdAt')}: </span>
-                        {formatTimestamp(locale, sysRole.createdAt)}
+                        {formatTimestamp(locale, sysRole.createdAt, 'relative')}
                     </div>
                     <div>
                         <span>{tTech('updatedAt')}: </span>
-                        {formatTimestamp(locale, sysRole.updatedAt)}
+                        {formatTimestamp(locale, sysRole.updatedAt, 'relative')}
                     </div>
                 </TableCell>
             ),
@@ -311,11 +311,11 @@ export default function AdminPage() {
                 <TableCell variant='stacked'>
                     <div>
                         <span>{tTech('createdAt')}: </span>
-                        {formatTimestamp(locale, sysPerm.createdAt)}
+                        {formatTimestamp(locale, sysPerm.createdAt, 'relative')}
                     </div>
                     <div>
                         <span>{tTech('updatedAt')}: </span>
-                        {formatTimestamp(locale, sysPerm.updatedAt)}
+                        {formatTimestamp(locale, sysPerm.updatedAt, 'relative')}
                     </div>
                 </TableCell>
             ),

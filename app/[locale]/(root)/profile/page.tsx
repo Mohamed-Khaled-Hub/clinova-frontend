@@ -317,8 +317,9 @@ export default function ProfilePage() {
                             label={tTech('createdAt')}
                             isLocked
                             viewValue={formatTimestamp(
-                                locale as LocaleType,
-                                user?.createdAt
+                                locale,
+                                user?.createdAt,
+                                'relative'
                             )}
                         />
 
@@ -326,8 +327,9 @@ export default function ProfilePage() {
                             label={tTech('updatedAt')}
                             isLocked
                             viewValue={formatTimestamp(
-                                locale as LocaleType,
-                                user?.updatedAt
+                                locale,
+                                user?.updatedAt,
+                                'relative'
                             )}
                         />
                     </FieldsGrid>
