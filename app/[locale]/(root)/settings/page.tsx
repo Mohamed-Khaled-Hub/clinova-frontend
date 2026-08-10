@@ -258,6 +258,7 @@ export default function SettingsPage() {
                 title={t('title')}
                 subtitle={t('subtitle')}
                 Icon={FiSettings}
+                noBorder
             />
 
             {error && <ErrorMessages messages={error} />}

@@ -138,7 +138,9 @@
         "quickActions": "إجراءات سريعة",
         "summary": "نظرة عامة يومية",
         "todaysVisits": "زيارات اليوم",
-        "todaysPatients": "المرضى المسجلون اليوم"
+        "todaysPatients": "المرضى المسجلون اليوم",
+        "todaysNetProfit": "صافي أرباح اليوم",
+        "todaysVisitsTableTitle": "جدول زيارات اليوم"
     },
     "LoginPage": {
         "title": "مرحباً بك في",

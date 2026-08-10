@@ -356,6 +356,7 @@ export default function PriceCatalogPage() {
                 title={t('title')}
                 subtitle={t('subtitle')}
                 Icon={FiDollarSign}
+                noBorder
             />
 
             {error && <ErrorMessages messages={error} />}

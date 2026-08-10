@@ -5,8 +5,9 @@
 }
 
 section.dashboard-summary-section,
-section.dashboard-quick-actions-section {
-    @apply flex flex-col gap-3 w-full text-left rtl:text-right;
+section.dashboard-quick-actions-section,
+section.dashboard-table-section {
+    @apply flex flex-col gap-3 w-full my-3 text-left rtl:text-right;
 }
 
 h2.dashboard-section-title {
@@ -15,7 +16,7 @@ h2.dashboard-section-title {
 }
 
 div.dashboard-summary-grid {
-    @apply grid gap-4 w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+    @apply grid gap-4 w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3;
 }
 
 div.quick-actions-grid {

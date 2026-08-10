@@ -138,7 +138,9 @@
         "quickActions": "Quick Actions",
         "summary": "Daily Overview",
         "todaysVisits": "Today's Visits",
-        "todaysPatients": "Today's Registered Patients"
+        "todaysPatients": "Today's Registered Patients",
+        "todaysNetProfit": "Today's Net Profit",
+        "todaysVisitsTableTitle": "Today's Visits Schedule"
     },
     "LoginPage": {
         "title": "Welcome to",
