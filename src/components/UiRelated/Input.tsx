@@ -10,7 +10,7 @@ import { renderClasses } from '@/src/utils/functions'
 // Types
 import { InputProps } from '@/src/types/props.type'
 // Style
-import '@/src/styles/components/UIRelated/Input.css'
+import '@/src/styles/components/UiRelated/Input.css'
 
 export default function Input({
     label,
