@@ -20,26 +20,37 @@
 
     td.medical-doc-table-cell-body {
         vertical-align: top !important;
+        padding: 0 1rem 0.75rem !important;
     }
 
-    li,
-    .medical-doc-diagnosis-block,
+    div.medical-doc-body-content {
+        display: block !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
     .medical-doc-section-block {
-        page-break-inside: avoid;
-        break-inside: avoid;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+    }
+
+    li.medical-doc-note-item,
+    .medical-doc-diagnosis-block {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
 }
 
 td.medical-doc-table-cell-body {
-    @apply align-top;
+    @apply align-top py-3 px-4;
 }
 
 div.medical-doc-body-content {
-    @apply relative z-10 py-3 flex flex-col justify-start;
+    @apply relative z-10 flex flex-col justify-start;
 }
 
 div.medical-doc-diagnosis-block {
-    @apply mb-3 pb-2 border-b border-dashed border-doc-border/60;
+    @apply mb-2 pb-2 border-b border-dashed border-doc-border/60;
 }
 
 h3.medical-doc-diagnosis-title {

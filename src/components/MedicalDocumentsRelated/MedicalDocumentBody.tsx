@@ -110,13 +110,7 @@ export default function MedicalDocumentBody({
                         )}
 
                         {/* Document Section Content */}
-                        <div
-                            className={`medical-doc-notes-container ${
-                                documentType === 'PRESCRIPTION'
-                                    ? 'px-4'
-                                    : 'px-0'
-                            }`}
-                        >
+                        <div className='medical-doc-notes-container'>
                             {!hasPrimaryNotes ? (
                                 <p className='medical-doc-notes-empty'>
                                     {emptyMessage || defaultEmptyText}

@@ -17,6 +17,11 @@
     thead {
         display: table-header-group !important;
     }
+
+    thead td,
+    thead th {
+        padding-bottom: 0.75rem !important;
+    }
 }
 
 .medical-document-header-wrapper {

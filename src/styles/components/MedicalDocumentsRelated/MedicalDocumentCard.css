@@ -28,6 +28,7 @@
 
     div.medical-document-card-container,
     div.medical-document-card {
+        display: block !important;
         margin: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
@@ -37,8 +38,8 @@
         border: none !important;
         border-radius: 0 !important;
         padding: 0 !important;
-        page-break-after: avoid !important;
-        break-after: avoid !important;
+        page-break-after: auto !important;
+        break-after: auto !important;
     }
 
     div.medical-document-card-watermark-wrapper {
@@ -53,6 +54,8 @@
 
     div.medical-document-card > table {
         width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
         border-collapse: collapse !important;
         page-break-inside: auto !important;
     }
