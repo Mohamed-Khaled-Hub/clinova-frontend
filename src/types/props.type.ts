@@ -9,6 +9,7 @@ import {
     InputHTMLAttributes,
     TextareaHTMLAttributes,
     ComponentPropsWithoutRef,
+    RefObject,
 } from 'react'
 // Enums
 import { StatusEnum } from '@/src/enums/ui.enum'
@@ -20,9 +21,13 @@ import {
     SelectOptionType,
     TableColumnType,
     TabItem,
+    MedicalDocumentType,
 } from '@/src/types/ui.type'
 import { VisitNoteSubDocument } from '@/src/types/backend/documents.type'
-import { VisitResponse } from '@/src/types/backend/backend.responses.type'
+import {
+    MedicalDocumentsData,
+    VisitResponse,
+} from '@/src/types/backend/backend.responses.type'
 
 export type LocaleAndChildrenProps = PropsWithChildren & LocaleParamsProps
 
@@ -239,4 +244,27 @@ export type SummaryCardProps = {
     value: string
     Icon: IconType
     className?: string
+}
+
+export type MedicalDocumentFooterProps = {
+    address?: string | null
+    phones?: string[]
+}
+
+export type MedicalDocumentHeaderProps = Pick<
+    MedicalDocumentsData,
+    'clinic' | 'patient' | 'visit'
+>
+
+export type MedicalDocumentCardProps = PropsWithChildren & {
+    watermarkUrl?: string | null
+    cardRef: RefObject<HTMLDivElement | null>
+    onPrintAction: () => void
+    locale?: string
+}
+
+export type MedicalDocumentBodyProps = {
+    documentType: MedicalDocumentType
+    notes?: MedicalDocumentsData['visit']['notes']
+    emptyMessage?: string
 }

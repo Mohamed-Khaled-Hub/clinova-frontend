@@ -1,0 +1,85 @@
+@import '../../globals.css';
+
+@theme {
+    --color-medical-doc-border: color-mix(
+        in oklab,
+        var(--color-c2) 25%,
+        transparent
+    );
+    --color-medical-doc-bg: var(--color-white);
+    --color-medical-doc-text: var(--color-c1);
+}
+
+@page {
+    size: A5 portrait;
+    margin: 8mm;
+}
+
+@media print {
+    html,
+    body {
+        height: auto !important;
+        min-height: 0 !important;
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    div.medical-document-card-container,
+    div.medical-document-card {
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+    }
+
+    div.medical-document-card-watermark-wrapper {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        height: 100% !important;
+    }
+
+    div.medical-document-card > table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        page-break-inside: auto !important;
+    }
+}
+
+div.medical-document-card-container {
+    @apply relative mx-auto max-w-[148mm];
+}
+
+div.medical-document-card-print-btn-wrapper {
+    @apply absolute top-2 z-20 print:hidden;
+    @apply ltr:right-2 rtl:left-2;
+}
+
+div.medical-document-card {
+    @apply relative mx-auto w-full max-w-[148mm] min-h-[210mm] border p-5 shadow-lg rounded-sm print:shadow-none print:border-none print:p-0;
+    @apply bg-medical-doc-bg border-medical-doc-border text-medical-doc-text flex flex-col justify-between;
+}
+
+div.medical-document-card > table {
+    @apply h-full min-h-[inherit] w-full border-collapse table-fixed;
+}
+
+div.medical-document-card-watermark-wrapper {
+    @apply absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none select-none;
+}
+
+div.medical-document-card-watermark-container {
+    @apply relative h-80 w-80;
+}

@@ -28,3 +28,8 @@ export type TabItem<T extends string> = {
 }
 
 export type TabKey = 'users' | 'roles' | 'permissions'
+
+export type MedicalDocumentType =
+    | 'PRESCRIPTION'
+    | 'LAB_REQUEST'
+    | 'RADIOLOGY_REQUEST'

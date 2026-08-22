@@ -1,0 +1,77 @@
+@import '../../globals.css';
+
+@media print {
+    tfoot {
+        display: table-footer-group !important;
+    }
+
+    div.medical-document-footer-tfoot-spacer {
+        height: 105px !important;
+        display: block !important;
+    }
+
+    div.medical-document-footer-container {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 20;
+    }
+}
+
+div.medical-document-footer-tfoot-spacer {
+    @apply h-[105px] print:block hidden;
+}
+
+div.medical-document-footer-container {
+    @apply pt-2;
+}
+
+div.medical-document-footer-signature-wrapper {
+    @apply flex w-full justify-end py-1 px-1 mb-1;
+}
+
+div.medical-document-footer-signature-box {
+    @apply ms-auto min-w-[150px] text-end space-y-1;
+}
+
+span.medical-document-footer-signature-label {
+    @apply block text-xs font-bold text-center uppercase tracking-wider;
+    @apply text-c1;
+}
+
+div.medical-document-footer-signature-area {
+    @apply relative h-5 flex items-end justify-end pb-1;
+}
+
+div.medical-document-footer-signature-line {
+    @apply w-full border-b-2 border-dashed border-c1 opacity-50;
+}
+
+div.medical-document-footer {
+    @apply pt-0.5;
+}
+
+div.medical-document-footer-divider-gradient-footer {
+    @apply h-[2px] w-full my-1.5 bg-gradient-to-r from-transparent via-[color-mix(in_oklab,var(--color-c2)_40%,transparent)] to-transparent;
+}
+
+div.medical-document-footer-info-row {
+    @apply text-center text-[10px] flex flex-col items-center gap-1;
+}
+
+div.medical-document-footer-info-item {
+    @apply flex items-center justify-center gap-1 font-medium;
+    @apply !text-c1;
+}
+
+div.medical-document-footer-info-item.is-phone {
+    @apply font-semibold;
+    @apply !text-c1;
+}
+
+.medical-document-footer-icon {
+    @apply shrink-0;
+    @apply text-c3;
+}

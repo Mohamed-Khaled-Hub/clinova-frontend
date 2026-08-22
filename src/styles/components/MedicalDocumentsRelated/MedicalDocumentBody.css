@@ -1,0 +1,79 @@
+@import '../../globals.css';
+
+@theme {
+    --color-doc-primary: var(--color-c4);
+    --color-doc-primary-dark: var(--color-c3);
+    --color-doc-text-main: var(--color-c1);
+    --color-doc-text-muted: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
+    --color-doc-border: color-mix(in oklab, var(--color-c2) 25%, transparent);
+    --color-doc-bg: var(--color-white);
+}
+
+@media print {
+    tbody {
+        display: table-row-group !important;
+    }
+
+    td.medical-doc-table-cell-body {
+        vertical-align: top !important;
+    }
+
+    li,
+    .medical-doc-diagnosis-block,
+    .medical-doc-section-block {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+td.medical-doc-table-cell-body {
+    @apply align-top;
+}
+
+div.medical-doc-body-content {
+    @apply relative z-10 py-3 flex flex-col justify-start;
+}
+
+div.medical-doc-diagnosis-block {
+    @apply mb-3 pb-2 border-b border-dashed border-doc-border/60;
+}
+
+h3.medical-doc-diagnosis-title {
+    @apply text-xs font-bold text-doc-primary-dark tracking-wider mb-0.5;
+}
+
+p.medical-doc-diagnosis-text {
+    @apply text-xs font-medium text-doc-text-main leading-relaxed;
+}
+
+div.medical-doc-rx-symbol {
+    @apply text-2xl font-bold mb-2 italic text-doc-primary-dark;
+}
+
+div.medical-doc-section-block {
+    @apply mb-3 space-y-1;
+}
+
+h3.medical-doc-section-title {
+    @apply text-xs font-bold text-doc-primary-dark tracking-wider mb-2;
+}
+
+p.medical-doc-notes-empty {
+    @apply italic text-[11px] text-doc-text-muted;
+}
+
+ul.medical-doc-notes-list {
+    @apply list-disc ltr:pl-4 rtl:pr-4 space-y-1.5 text-xs font-medium leading-relaxed text-doc-text-main;
+}
+
+li.medical-doc-note-item {
+    @apply whitespace-pre-line;
+}
+
+span.medical-doc-note-split-wrapper {
+    @apply flex items-center justify-between w-full;
+}
