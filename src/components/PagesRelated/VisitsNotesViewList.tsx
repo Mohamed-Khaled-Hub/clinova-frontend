@@ -99,6 +99,7 @@ export default function VisitsNotesViewList({
                                         : categoryKey}
                                 </h3>
                                 <button
+                                    type='button'
                                     className={`visit-note-category-toggle-btn ${isExpanded ? 'is-active' : ''}`}
                                     aria-expanded={isExpanded}
                                     title={isExpanded ? 'Collapse' : 'Expand'}

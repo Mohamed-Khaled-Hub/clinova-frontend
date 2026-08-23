@@ -288,29 +288,50 @@ export default function FinancePage() {
                         <ResponsiveContainer width='100%' height={300}>
                             <PieChart>
                                 <Pie
-                                    data={expensesData.map((item, index) => ({
-                                        ...item,
-                                        fill: CHART_COLORS[
-                                            index % CHART_COLORS.length
-                                        ],
-                                    }))}
+                                    data={
+                                        expensesData.length > 0
+                                            ? expensesData.map(
+                                                  (item, index) => ({
+                                                      ...item,
+                                                      fill: CHART_COLORS[
+                                                          index %
+                                                              CHART_COLORS.length
+                                                      ],
+                                                  })
+                                              )
+                                            : [
+                                                  {
+                                                      expense: 1,
+                                                      expenseCategory:
+                                                          'No Data',
+                                                      fill: 'var(--color-neutral-300)',
+                                                  },
+                                              ]
+                                    }
                                     dataKey='expense'
                                     nameKey='expenseCategory'
                                     cx='50%'
                                     cy='50%'
                                     outerRadius={80}
                                 />
-                                <Tooltip
-                                    formatter={(value, name) => [
-                                        `${value!.toLocaleString()} ${tCurrency('egp')}`,
-                                        tExpenseCategory(name as string),
-                                    ]}
-                                />
-                                <Legend
-                                    formatter={(value) =>
-                                        tExpenseCategory(value)
-                                    }
-                                />
+
+                                {expensesData.length > 0 && (
+                                    <>
+                                        <Tooltip
+                                            formatter={(value, name) => [
+                                                `${value!.toLocaleString()} ${tCurrency('egp')}`,
+                                                tExpenseCategory(
+                                                    name as string
+                                                ),
+                                            ]}
+                                        />
+                                        <Legend
+                                            formatter={(value) =>
+                                                tExpenseCategory(value)
+                                            }
+                                        />
+                                    </>
+                                )}
                             </PieChart>
                         </ResponsiveContainer>
                     </div>

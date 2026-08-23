@@ -97,10 +97,25 @@ export default function VisitDetailsPage({ params }: IdPageProps) {
                 setIsScreenLoading(true)
                 const data = await getVisitById(id)
                 setVisit(data)
-                if (data?.notes && data.notes.length > 0)
-                    setLastNoteCategory(
-                        data.notes[data.notes.length - 1].category
+                if (data?.notes) {
+                    setNotes(
+                        data.notes.map((n) => ({
+                            category: n.category,
+                            noteText: n.noteText,
+                            contentDate: n.contentDate
+                                ? new Date(n.contentDate)
+                                      .toISOString()
+                                      .slice(0, 10)
+                                : null,
+                            highlightColor: n.highlightColor,
+                        }))
                     )
+                    if (data.notes.length > 0) {
+                        setLastNoteCategory(
+                            data.notes[data.notes.length - 1].category
+                        )
+                    }
+                }
             } catch (err) {
                 const backendErr = err as BackendErrorResponse
                 setError(backendErr.message)
@@ -215,7 +230,7 @@ export default function VisitDetailsPage({ params }: IdPageProps) {
 
     const handleSaveChanges = async (e: SubmitEvent<HTMLFormElement>) => {
         e.preventDefault()
-        if (!canWriteVisit) return
+        if (!canWriteVisit || !isEditing) return
         setError(null)
         setIsSaving(true)
 

@@ -8,6 +8,11 @@
         var(--color-neutral-50) 70%,
         transparent
     );
+    --color-table-text-empty: color-mix(
+        in oklab,
+        var(--color-c2) 50%,
+        transparent
+    );
     --color-table-th-text: var(--color-c1);
     --color-table-row-hover: color-mix(
         in oklab,
@@ -23,6 +28,11 @@ div.table-wrapper {
 div.table-empty {
     @apply w-full flex items-center justify-center p-12 border border-dashed rounded-xl text-center shadow-sm;
     @apply bg-table-bg border-table-border;
+}
+
+div.table-empty p {
+    @apply text-sm italic font-semibold text-center;
+    @apply !text-table-text-empty;
 }
 
 div.table-container {
