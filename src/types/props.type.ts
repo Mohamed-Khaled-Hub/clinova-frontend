@@ -141,6 +141,7 @@ export type SelectProps = Omit<
     label?: string
     options: SelectOptionType[]
     placeholder?: string
+    variant?: 'basic' | 'searchable'
     onChangeAction: (value: string) => void
 }
 
@@ -231,6 +232,7 @@ export type VisitNoteProps = {
 export type VisitsNotesViewListProps = {
     visits: VisitResponse | VisitResponse[]
     emptyMessage: string
+    showVisitsHeader?: boolean
 }
 
 export type TabsProps<T extends string> = {

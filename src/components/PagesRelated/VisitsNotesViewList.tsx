@@ -19,6 +19,7 @@ import '@/src/styles/components/PagesRelated/VisitsNotesViewList.css'
 export default function VisitsNotesViewList({
     visits,
     emptyMessage,
+    showVisitsHeader = false,
 }: VisitsNotesViewListProps) {
     // Translations
     const t = useTranslations('VisitsNotesViewListComponent')
@@ -187,7 +188,7 @@ export default function VisitsNotesViewList({
     }
 
     // Render single visit natively without extra split containers
-    if (isSingleVisit) {
+    if (isSingleVisit && !showVisitsHeader) {
         return (
             <div className='visit-notes-view-list'>
                 {renderVisitContent(visitsArray[0], 0)}
@@ -197,7 +198,9 @@ export default function VisitsNotesViewList({
 
     // Multi-visit structural layout implementation
     return (
-        <div className='visit-notes-view-list multi-visit-scroll-container'>
+        <div
+            className={`visit-notes-view-list multi-visit-scroll-container ${!isSingleVisit && '!flex-row-reverse'}`}
+        >
             {visitsArray.map((visitItem, index) => {
                 const visitTitle = visitItem.visitDate
                     ? formatTimestamp(locale, visitItem.visitDate, 'dateOnly')

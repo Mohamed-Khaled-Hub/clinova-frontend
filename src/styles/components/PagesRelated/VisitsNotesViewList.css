@@ -20,11 +20,11 @@ div.visit-notes-view-list-inner {
 }
 
 div.visit-notes-view-list.multi-visit-scroll-container {
-    @apply flex flex-row gap-6 w-full overflow-x-auto overflow-y-hidden pt-4 scrollbar-thin rotate-180;
+    @apply flex flex-row gap-6 w-full overflow-x-auto overflow-y-hidden pt-4 scrollbar-thin transform -scale-y-100 [&>*]:-scale-y-100;
 }
 
 div.multi-visit-column {
-    @apply flex flex-col gap-3 pt-4 min-w-[320px] max-w-[450px] sm:min-w-[400px] grow shrink-0 rotate-180;
+    @apply flex flex-col gap-3 pt-4 min-w-[320px] max-w-[450px] sm:min-w-[400px] grow shrink-0;
 }
 
 a.multi-visit-column-header-link {
@@ -75,10 +75,6 @@ button.visit-note-category-toggle-btn {
 
 .visit-note-toggle-icon {
     @apply transition-transform;
-}
-
-button.visit-note-category-toggle-btn.is-active .visit-note-toggle-icon {
-    @apply -rotate-180;
 }
 
 div.visit-note-category-items {

@@ -3,9 +3,11 @@
 // Core
 import { SubmitEvent, useState, useEffect } from 'react'
 import { FaStethoscope } from 'react-icons/fa'
-import { FiActivity, FiCalendar, FiPlus } from 'react-icons/fi'
+import { FiActivity, FiPlus } from 'react-icons/fi'
 import { useRouter } from '@/src/i18n/routing'
-import { useTranslations, useLocale } from 'next-intl'
+import { useTranslations, createTranslator, useLocale } from 'next-intl'
+// I18n
+import ar from '@/src/i18n/messages/ar.json'
 // Components
 import Input from '@/src/components/UiRelated/Input'
 import Select from '@/src/components/UiRelated/Select'
@@ -50,7 +52,11 @@ import '@/src/styles/pages/(root)/visits/create/page.css'
 export default function CreateVisitPage() {
     // Translations
     const t = useTranslations('CreateVisitPage')
-    const tAge = useTranslations('Age')
+    const tAgeAr = createTranslator({
+        locale: 'ar',
+        messages: ar,
+        namespace: 'Age',
+    })
     const tCategory = useTranslations('VisitCategoryEnum')
     const tPaymentMethod = useTranslations('PaymentMethodEnum')
     const tFinancialStatus = useTranslations('FinancialStatusEnum')
@@ -183,14 +189,15 @@ export default function CreateVisitPage() {
 
     // Event Handlers
     const patientOptions = (patients || []).map((patient: PatientDocument) => {
-        const displayName =
-            locale === 'ar' ? patient.fullNameAr : patient.fullNameEn
+        const displayName = patient.fullNameAr
         const age = calculateAge(patient.dob)
-        const ageSuffix = age !== null ? ` (${age} ${tAge('years')})` : ''
+        const ageSuffix = age !== null ? ` (${age} ${tAgeAr('years')})` : ''
+
+        const formattedPhone = `\u200E${patient.phone}`
 
         return {
             value: patient._id,
-            label: `${displayName}${ageSuffix}`,
+            label: `(${formattedPhone}) ${displayName}${ageSuffix}`,
         }
     })
 
@@ -351,6 +358,7 @@ export default function CreateVisitPage() {
                                 },
                                 ...patientOptions,
                             ]}
+                            variant='searchable'
                         />
                     </FormControl>
 
@@ -523,7 +531,6 @@ export default function CreateVisitPage() {
                         <Input
                             id='nextVisitDate'
                             type='datetime-local'
-                            Icon={FiCalendar}
                             value={formData.nextVisitDate || ''}
                             onChangeAction={(val) =>
                                 updateFormField('nextVisitDate', val)
@@ -565,51 +572,57 @@ export default function CreateVisitPage() {
 
                 {/* Revenue & Billing Alignment Matrix */}
                 <FormFieldSet legend={t('billingSection')} columns={2}>
-                    <FormControl
-                        id='transactionAmount'
-                        label={t('transactionAmount')}
-                    >
-                        <Input
+                    <div className='not-sm:col-span-2'>
+                        <FormControl
                             id='transactionAmount'
-                            type='number'
-                            value={
-                                formData.revenueDetails?.transactionAmount ?? ''
-                            }
-                            onChangeAction={(val) =>
-                                updateRevenueField(
-                                    'transactionAmount',
-                                    val ? Number(val) : undefined
-                                )
-                            }
-                            placeholder='0.00'
-                            min={0}
-                            step='any'
-                            disabled={isSubmitting}
-                        />
-                    </FormControl>
+                            label={t('transactionAmount')}
+                        >
+                            <Input
+                                id='transactionAmount'
+                                type='number'
+                                value={
+                                    formData.revenueDetails
+                                        ?.transactionAmount ?? ''
+                                }
+                                onChangeAction={(val) =>
+                                    updateRevenueField(
+                                        'transactionAmount',
+                                        val ? Number(val) : undefined
+                                    )
+                                }
+                                placeholder='0.00'
+                                min={0}
+                                step='any'
+                                disabled={isSubmitting}
+                            />
+                        </FormControl>
+                    </div>
 
-                    <FormControl
-                        id='discountAmount'
-                        label={t('discountAmount')}
-                    >
-                        <Input
+                    <div className='not-sm:col-span-2'>
+                        <FormControl
                             id='discountAmount'
-                            type='number'
-                            value={
-                                formData.revenueDetails?.discountAmount ?? ''
-                            }
-                            onChangeAction={(val) =>
-                                updateRevenueField(
-                                    'discountAmount',
-                                    val ? Number(val) : undefined
-                                )
-                            }
-                            placeholder='0.00'
-                            min={0}
-                            step='any'
-                            disabled={isSubmitting}
-                        />
-                    </FormControl>
+                            label={t('discountAmount')}
+                        >
+                            <Input
+                                id='discountAmount'
+                                type='number'
+                                value={
+                                    formData.revenueDetails?.discountAmount ??
+                                    ''
+                                }
+                                onChangeAction={(val) =>
+                                    updateRevenueField(
+                                        'discountAmount',
+                                        val ? Number(val) : undefined
+                                    )
+                                }
+                                placeholder='0.00'
+                                min={0}
+                                step='any'
+                                disabled={isSubmitting}
+                            />
+                        </FormControl>
+                    </div>
 
                     <FormControl id='paymentMethod' label={t('paymentMethod')}>
                         <Select

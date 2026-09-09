@@ -410,6 +410,7 @@ export default function PatientDetailsPage({ params }: IdPageProps) {
                                 <VisitsNotesViewList
                                     visits={visits}
                                     emptyMessage={t('noNotesRecorded')}
+                                    showVisitsHeader
                                 />
                             }
                         />

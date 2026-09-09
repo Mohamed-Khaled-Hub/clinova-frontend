@@ -1,7 +1,6 @@
 @import '../../globals.css';
 
 @theme {
-    /* Mirrored Input Variable Themes */
     --color-select-bg: var(--color-c8);
     --color-select-border: color-mix(
         in oklab,
@@ -9,7 +8,6 @@
         transparent
     );
 
-    /* Hover State Variable */
     --color-select-hover-border: color-mix(
         in oklab,
         var(--color-c2) 45%,
@@ -23,22 +21,31 @@
         transparent
     );
 
-    /* Disabled Fields */
     --color-select-disabled-bg: var(--color-neutral-50);
     --color-select-disabled-text: var(--color-neutral-400);
 
-    /* Typography & Icons */
     --color-select-text: var(--color-c1);
     --color-select-label: var(--color-c1);
     --color-select-icon: color-mix(in oklab, var(--color-c2) 50%, transparent);
+
+    --color-select-item-hover: color-mix(
+        in oklab,
+        var(--color-c2) 8%,
+        transparent
+    );
+    --color-select-item-selected: color-mix(
+        in oklab,
+        var(--color-c2) 15%,
+        transparent
+    );
 }
 
 div.select-container {
-    @apply flex flex-col gap-1.5 w-full;
+    @apply relative flex flex-col gap-1.5 w-full;
 }
 
 label.select-label {
-    @apply block text-sm font-semibold tracking-tight select-none;
+    @apply block text-sm font-semibold tracking-tight select-none cursor-pointer;
     @apply text-select-label;
 }
 
@@ -46,24 +53,69 @@ div.select-field-wrapper {
     @apply relative w-full flex items-center;
 }
 
-select.select-box {
-    @apply w-full px-3 py-2 pr-10 rtl:pl-10 rtl:pr-3 rounded-lg border text-sm shadow-sm appearance-none transition-all duration-200 ease-in-out focus:outline-none focus:ring-4 disabled:cursor-not-allowed;
+button.select-trigger {
+    @apply w-full px-3 py-2 flex items-center justify-between rounded-lg border text-sm shadow-sm transition-all duration-200 ease-in-out focus:outline-none focus:ring-4 disabled:cursor-not-allowed text-left rtl:text-right cursor-pointer;
     @apply bg-select-bg border-select-border text-select-text focus:border-select-focus-border focus:ring-select-focus-ring disabled:bg-select-disabled-bg disabled:text-select-disabled-text;
 }
 
-select.select-box:not(:disabled):hover {
+button.select-trigger:not(:disabled):hover {
     @apply border-select-hover-border;
 }
 
-select.select-box:focus + .select-end-icon-container .select-icon {
-    @apply rotate-180;
+button.select-trigger.is-open {
+    @apply border-select-focus-border ring-4 ring-select-focus-ring;
 }
 
-.select-end-icon-container {
-    @apply absolute right-3 ltr:right-3 rtl:left-3 ltr:left-auto rtl:right-auto h-9 flex items-center justify-center pointer-events-none bg-transparent p-0;
-    @apply text-select-icon;
+.select-trigger-text {
+    @apply truncate;
+}
+
+.select-trigger-text.placeholder {
+    @apply text-neutral-400;
 }
 
 .select-icon {
-    @apply text-lg transition-transform duration-200 ease-in-out;
+    @apply text-lg transition-transform duration-200 ease-in-out text-select-icon flex-shrink-0 ms-2;
+}
+
+.select-dropdown-menu {
+    @apply absolute top-[calc(100%+0.375rem)] left-0 right-0 z-50 rounded-lg border shadow-lg overflow-hidden flex flex-col max-h-60;
+    @apply bg-select-bg border-select-border;
+}
+
+.select-search-wrapper {
+    @apply flex items-center px-3 py-2 border-b sticky top-0 bg-select-bg z-10;
+    @apply border-select-border;
+}
+
+.select-search-icon {
+    @apply text-select-icon text-base me-2 flex-shrink-0;
+}
+
+.select-search-input {
+    @apply w-full bg-transparent text-sm text-select-text outline-none placeholder:text-neutral-400;
+}
+
+.select-options-list {
+    @apply overflow-y-auto py-1 my-0 list-none p-0;
+}
+
+.select-option-item {
+    @apply px-3 py-2 text-sm text-select-text flex items-center justify-between cursor-pointer transition-colors duration-150 select-none;
+}
+
+.select-option-item:hover {
+    @apply bg-[var(--color-select-item-hover)];
+}
+
+.select-option-item.selected {
+    @apply font-medium bg-[var(--color-select-item-selected)];
+}
+
+.select-check-icon {
+    @apply text-select-focus-border text-base ms-2 flex-shrink-0;
+}
+
+.select-no-options {
+    @apply px-3 py-4 text-sm text-center text-neutral-400 select-none;
 }
